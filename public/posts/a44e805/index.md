@@ -329,5 +329,5 @@ https://refactoringguru.cn/design-patterns/prototype
 ---
 
 > 作者: meowrain  
-> URL: http://localhost:1313/posts/a44e805/  
+> URL: https://example.org/posts/a44e805/  
 

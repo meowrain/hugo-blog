@@ -1395,5 +1395,5 @@ class Monster {
 ---
 
 > 作者: meowrain  
-> URL: http://localhost:1313/posts/f4f8ed5/  
+> URL: https://example.org/posts/f4f8ed5/  
 

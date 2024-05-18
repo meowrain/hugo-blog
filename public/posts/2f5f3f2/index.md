@@ -88,5 +88,5 @@ func printHelp() {
 ---
 
 > 作者: meowrain  
-> URL: http://localhost:1313/posts/2f5f3f2/  
+> URL: https://example.org/posts/2f5f3f2/  
 

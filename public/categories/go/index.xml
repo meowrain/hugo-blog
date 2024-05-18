@@ -1,34 +1,34 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Go - 分类 - MeowRain Blog</title>
-    <link>http://localhost:1313/categories/go/</link>
+    <link>https://example.org/categories/go/</link>
     <description>Go - 分类 | MeowRain Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
-      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 13:04:56 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/go/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 13:04:56 &#43;0800</lastBuildDate><atom:link href="https://example.org/categories/go/" rel="self" type="application/rss+xml" /><item>
   <title>Go Gophercises</title>
-  <link>http://localhost:1313/posts/33dc7d7/</link>
+  <link>https://example.org/posts/33dc7d7/</link>
   <pubDate>Sat, 18 May 2024 13:04:56 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/33dc7d7/</guid>
+  <guid>https://example.org/posts/33dc7d7/</guid>
   <description><![CDATA[https://courses.calhoun.io/courses/cor_gophercises
 1. Quizhttps://github.com/gophercises/quiz
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 第一部分： 编写一个程序，该程序能够读取通过CSV文件提供的测验（详细信息如下），并向用户展示此测验。程序需记录用户答对和答错的题目数量。无论答案正确与否，都应立即提出下一题。 默认情况下，CSV文件名为problems.csv，但用户应能通过标志自定义文件名。 CSV文件的格式如下：第一列是问题，同一行的第二列则是该问题的答案。 你可以假设测验相对较短（少于100题），且答案为单个词或数字。 测验结束时，程序应输出答对的问题总数和总问题数。对于给出无效答案的问题，视为回答错误。 第二部分： 根据第一部分的要求调整你的程序以添加计时器功能。默认时间限制应为30秒，但也可通过标志进行自定义设置。 一旦超过时间限制，测验应立即停止。也就是说，不应等待用户回答最后一个问题，而应在理想情况下完全停止测验，即使当时正在等待用户的答案也应如此处理。 在计时开始前，应提示用户按下回车键（或其他键）启动计时器；然后题目应逐一出示在屏幕上直至用户提供答案为止。无论答案正确与否都将继续下一题的提问过程直到全部完成测试内容为止！最后依然需要统计出本次答题过程中总共答对了多少道题目以及一共出现了多少道题目信息并展示给参与者查看结果情况哦~同时也要注意那些没有被有效解答过的或者是根本就没有来得及去作答的部分也都算作是错误的哟！ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 package main import ( &#34;context&#34; &#34;encoding/csv&#34; &#34;flag&#34; &#34;fmt&#34; &#34;log&#34; &#34;os&#34; &#34;strconv&#34; &#34;time&#34; ) func CommandLine() (string, int) { csvFileName := flag.]]></description>
 </item>
 <item>
   <title>Go语言打印进度</title>
-  <link>http://localhost:1313/posts/fc29587/</link>
+  <link>https://example.org/posts/fc29587/</link>
   <pubDate>Sat, 18 May 2024 13:03:40 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/fc29587/</guid>
+  <guid>https://example.org/posts/fc29587/</guid>
   <description><![CDATA[就是一直刷新当前行
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 package main import ( &#34;fmt&#34; &#34;time&#34; ) func main() { // 模拟一些操作，比如循环计数 for i := 0; i &lt;= 100; i++ { // 返回到行首 fmt.Print(&#34;\r&#34;) // 输出其他内容 fmt.Printf(&#34;Prefix: &#34;) // 输出进度 fmt.Printf(&#34;Progress: %d%%&#34;, i) // 强制刷新输出缓冲区 fmt.Print(&#34;\033[0m&#34;) // 重置 ANSI 颜色，防止影响后续输出 time.Sleep(100 * time.Millisecond) } fmt.Println(&#34;\nDone!&#34;) // 完成后换行 } ]]></description>
 </item>
 <item>
   <title>Go 错误处理</title>
-  <link>http://localhost:1313/posts/8a369fa/</link>
+  <link>https://example.org/posts/8a369fa/</link>
   <pubDate>Sat, 18 May 2024 13:03:05 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/8a369fa/</guid>
+  <guid>https://example.org/posts/8a369fa/</guid>
   <description><![CDATA[panic,recover在 Go 语言中，panic 和 recover 是用于处理程序错误和恢复的两个关键机制。
 panic：
 panic 是一个内建函数，用于表示程序发生了无法处理的错误。当发生 panic 时，程序会立即停止执行当前函数的剩余代码，并开始在调用栈中向上逐层执行 deferred 函数，直到达到当前协程的最顶层（即程序的入口函数），然后程序将终止并输出 panic 信息。 panic 通常用于表示不可恢复的错误，比如空指针引用、数组越界等，或者是程序运行过程中的一些不合法操作。 recover：
@@ -37,10 +37,10 @@ recover 也是一个内建函数，用于在 defer 延迟执行的函数中捕�
 </item>
 <item>
   <title>Go Gob</title>
-  <link>http://localhost:1313/posts/a47021b/</link>
+  <link>https://example.org/posts/a47021b/</link>
   <pubDate>Sat, 18 May 2024 13:02:07 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/a47021b/</guid>
+  <guid>https://example.org/posts/a47021b/</guid>
   <description><![CDATA[介绍Go的gob是Go语言标准库中的一种序列化/反序列化格式，主要用于在编码和解码时传输和存储Go数据结构。Gob格式专为Go语言设计，提供了一种高效的二进制编码方式，特别适合在网络通信和文件存储中使用。
 以下是Go的gob包的一些关键特性和使用方法：
 特性 高效的二进制编码：Gob格式比JSON和XML等文本格式更为紧凑和高效，因为它使用二进制表示数据。 面向Go语言：Gob格式支持Go语言中的复杂数据结构，包括嵌套结构、切片、映射等。 自动化的编码和解码：使用gob包可以自动处理编码和解码过程，无需手动序列化和反序列化。
@@ -48,56 +48,57 @@ recover 也是一个内建函数，用于在 defer 延迟执行的函数中捕�
 </item>
 <item>
   <title>Go Json解码和编码</title>
-  <link>http://localhost:1313/posts/35b4611/</link>
+  <link>https://example.org/posts/35b4611/</link>
   <pubDate>Sat, 18 May 2024 13:00:48 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/35b4611/</guid>
+  <guid>https://example.org/posts/35b4611/</guid>
   <description><![CDATA[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 vcard.go package vcard import ( &#34;time&#34; ) type Address struct { Street string HouseNumber uint32 HouseNumberAddOn string POBox string ZipCode string City string Country string } type VCard struct { FirstName string LastName string NickName string BirtDate time.Time Photo string Addresses map[string]*Address } 1 2 3 4 5 6 7 8 9 10 11 jsonUtil.]]></description>
 </item>
 <item>
-  <title>Go缓冲区例题</title>
-  <link>http://localhost:1313/posts/ad3706c/</link>
-  <pubDate>Sat, 18 May 2024 12:57:12 &#43;0800</pubDate>
-  <author>meowrain</author>
-  <guid>http://localhost:1313/posts/ad3706c/</guid>
-  <description><![CDATA[下面的代码有一个输入文件 goprogram，然后以每一行为单位读取，从读取的当前行中截取第 3 到第 5 的字节写入另一个文件。然而当你运行这个程序，输出的文件却是个空文件。找出程序逻辑中的 bug，修正它并测试。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 package main import ( &#34;bufio&#34; &#34;fmt&#34; &#34;os&#34; &#34;io&#34; ) func main() { inputFile, _ := os.Open(&#34;goprogram&#34;) outputFile, _ := os.OpenFile(&#34;goprogramT&#34;, os.O_WRONLY|os.O_CREATE, 0666) defer inputFile.Close() defer outputFile.Close() inputReader := bufio.NewReader(inputFile) outputWriter := bufio.NewWriter(outputFile) for { inputString, _, readerError := inputReader.]]></description>
-</item>
-<item>
   <title>Go Flag库使用</title>
-  <link>http://localhost:1313/posts/2f5f3f2/</link>
+  <link>https://example.org/posts/2f5f3f2/</link>
   <pubDate>Wed, 15 May 2024 19:28:48 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/2f5f3f2/</guid>
+  <guid>https://example.org/posts/2f5f3f2/</guid>
   <description><![CDATA[使用详情见https://pkg.go.dev/flag https://www.liwenzhou.com/posts/Go/flag/
 例子写一个模拟git命令的
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 package main import ( &#34;flag&#34; &#34;fmt&#34; &#34;os&#34; ) func main() { // 定义子命令 initCmd := flag.]]></description>
 </item>
 <item>
   <title>Go数组和切片联系</title>
-  <link>http://localhost:1313/posts/4e31f59/</link>
+  <link>https://example.org/posts/4e31f59/</link>
   <pubDate>Wed, 15 May 2024 19:07:17 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/4e31f59/</guid>
+  <guid>https://example.org/posts/4e31f59/</guid>
   <description><![CDATA[Go数组和切片练习数组练习1：证明当数组赋值时，发生了数组内存拷贝。1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 package main import &#34;fmt&#34; func main() { arr1 := new([5]int) arr2 := arr1 arr2[1] = 3 fmt.Println(arr1) //&amp;[0 3 0 0 0] fmt.Println(arr2) //&amp;[0 3 0 0 0] arr3 := [5]int{1, 2, 3, 4, 5} arr4 := &amp;arr3 //使用&amp;获取地址，修改arr4也会修改arr3 arr4[2] = 6 fmt.Println(arr3) //[1 2 6 4 5] fmt.]]></description>
 </item>
 <item>
   <title>Go接口</title>
-  <link>http://localhost:1313/posts/b3efa23/</link>
+  <link>https://example.org/posts/b3efa23/</link>
   <pubDate>Wed, 15 May 2024 19:06:01 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/b3efa23/</guid>
+  <guid>https://example.org/posts/b3efa23/</guid>
   <description><![CDATA[Go 接口接口定义Go语言提倡面向接口编程。
 指针接收者实现接口1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 package main import &#34;fmt&#34; // 接口定义 type USB interface { Connect() Disconnect() } type Laptop struct { name string version string } type Desktop struct { name string version string } // 实现USB接口 func (laptop *Laptop) Connect() { fmt.]]></description>
 </item>
 <item>
   <title>Go文件读写</title>
-  <link>http://localhost:1313/posts/17ec745/</link>
+  <link>https://example.org/posts/17ec745/</link>
   <pubDate>Wed, 15 May 2024 19:03:48 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/17ec745/</guid>
+  <guid>https://example.org/posts/17ec745/</guid>
   <description><![CDATA[参考文档：https://www.liwenzhou.com/posts/Go/file/
 读取文件1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 package main import ( &#34;fmt&#34; &#34;io&#34; &#34;os&#34;) func main() { file, err := os.Open(&#34;./data.txt&#34;) if err != nil { fmt.Println(&#34;open file err:&#34;, err) return } defer file.Close() var tmp = make([]byte, 1024) n, err := file.Read(tmp) if err == io.EOF { fmt.Println(&#34;文件读取完毕&#34;) return } fmt.Printf(&#34;读取了%d字节数据\n&#34;, n) fmt.]]></description>
+</item>
+<item>
+  <title>Go语言 Web框架Gin</title>
+  <link>https://example.org/posts/31a491d/</link>
+  <pubDate>Wed, 15 May 2024 18:10:02 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>https://example.org/posts/31a491d/</guid>
+  <description><![CDATA[Go语言 Web框架Gin参考 https://docs.fengfengzhidao.com
+https://www.liwenzhou.com/posts/Go/gin/#c-0-7-2
+返回各种值返回字符串1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 package main import ( &#34;net/http&#34; &#34;github.com/gin-gonic/gin&#34; ) func main() { router := gin.Default() router.GET(&#34;/&#34;, func(c *gin.Context) { c.String(http.StatusOK, &#34;helloworld&#34;) }) router.Run(&#34;:8080&#34;) } 返回json1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 package main import ( &#34;net/http&#34; &#34;github.]]></description>
 </item>
 </channel>
 </rss>

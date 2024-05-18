@@ -30,5 +30,5 @@ $ mysql -h 127.0.0.1 -P 3306 -u root -p123456
 ---
 
 > 作者: meowrain  
-> URL: http://localhost:1313/posts/e3c5896/  
+> URL: https://example.org/posts/e3c5896/  
 

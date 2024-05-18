@@ -118,5 +118,5 @@ func printResults(correct, incorrect int) {
 ---
 
 > 作者: meowrain  
-> URL: http://localhost:1313/posts/33dc7d7/  
+> URL: https://example.org/posts/33dc7d7/  
 

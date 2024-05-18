@@ -1,24 +1,24 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Docker - 分类 - MeowRain Blog</title>
-    <link>http://localhost:1313/categories/docker/</link>
+    <link>https://example.org/categories/docker/</link>
     <description>Docker - 分类 | MeowRain Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
-      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Wed, 15 May 2024 19:15:16 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/docker/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Wed, 15 May 2024 19:15:16 &#43;0800</lastBuildDate><atom:link href="https://example.org/categories/docker/" rel="self" type="application/rss+xml" /><item>
   <title>Docker安装mysql</title>
-  <link>http://localhost:1313/posts/e3c5896/</link>
+  <link>https://example.org/posts/e3c5896/</link>
   <pubDate>Wed, 15 May 2024 19:15:16 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/e3c5896/</guid>
+  <guid>https://example.org/posts/e3c5896/</guid>
   <description><![CDATA[Docker安装mysql1 2 3 4 $ docker pull mysql:latest $ cd ~ $ mkdir mysql $ cd mysql 1 $ docker run -p 3306:3306 --name mysql -v $PWD/conf/my.cnf:/etc/mysql/my.cnf -v $PWD/logs:/logs -v $PWD/data:/mysql_data -e MYSQL_ROOT_PASSWORD=123456 -d mysql 连接mysqlhttps://docs.fedoraproject.org/en-US/quick-docs/installing-mysql-mariadb/ 可以参考一下官方文档
 1 $ sudo dnf install community-mysql-server 1 $ mysql -h 127.0.0.1 -P 3306 -u root -p123456 ]]></description>
 </item>
 <item>
   <title>Docker容器技术</title>
-  <link>http://localhost:1313/posts/7eb358a/</link>
+  <link>https://example.org/posts/7eb358a/</link>
   <pubDate>Wed, 15 May 2024 19:13:57 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/7eb358a/</guid>
+  <guid>https://example.org/posts/7eb358a/</guid>
   <description><![CDATA[原文链接: https://www.yuque.com/qingkongxiaguang/zwhkpi/kq6rlg
 Docker容器技术Docker是一门平台级别的技术，涉及的范围很广，所以，在开始之前，请确保你完成：Java SpringBoot 篇（推荐完成SpringCloud篇再来）视频教程及之前全部路线，否则学习会非常吃力，另外推荐额外掌握：《计算机网络》、《操作系统》相关知识。学一样东西不能完全靠记忆来完成，而是需要结合自己所学的基础知识加以理解，一般来说，单凭记忆能够掌握的东西往往是最廉价的。
 **Docker官网：**https://www.docker.com
@@ -36,10 +36,10 @@ Ubuntu 22.04 操作系统 Docker分为免费的CE（Community Edition）社区�
 </item>
 <item>
   <title>Docker用代理拉取镜像</title>
-  <link>http://localhost:1313/posts/7c3ddcd/</link>
+  <link>https://example.org/posts/7c3ddcd/</link>
   <pubDate>Wed, 15 May 2024 19:12:28 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/7c3ddcd/</guid>
+  <guid>https://example.org/posts/7c3ddcd/</guid>
   <description><![CDATA[配置代理打开/usr/lib/systemd/system/docker.service，在[Service]域中添加以下参数：
 1 2 3 Environment=&#34;HTTP_PROXY=http://proxy-addr:port/&#34; # 代理服务器地址 Environment=&#34;HTTPS_PROXY=http://proxy-addr:port/&#34; # https Environment=&#34;NO_PROXY=localhost,127.0.0.1&#34; # 哪些地址不需要走代理 更新配置，启动服务1 2 systemctl daemon-reload systemctl restart docker.service ]]></description>
 </item>
