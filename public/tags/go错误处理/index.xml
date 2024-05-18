@@ -1,0 +1,20 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Go错误处理 - 标签 - MeowRain Blog</title>
+    <link>http://localhost:1313/tags/go%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</link>
+    <description>Go错误处理 - 标签 | MeowRain Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 13:03:05 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/go%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" rel="self" type="application/rss+xml" /><item>
+  <title>Go 错误处理</title>
+  <link>http://localhost:1313/posts/8a369fa/</link>
+  <pubDate>Sat, 18 May 2024 13:03:05 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/8a369fa/</guid>
+  <description><![CDATA[panic,recover在 Go 语言中，panic 和 recover 是用于处理程序错误和恢复的两个关键机制。
+panic：
+panic 是一个内建函数，用于表示程序发生了无法处理的错误。当发生 panic 时，程序会立即停止执行当前函数的剩余代码，并开始在调用栈中向上逐层执行 deferred 函数，直到达到当前协程的最顶层（即程序的入口函数），然后程序将终止并输出 panic 信息。 panic 通常用于表示不可恢复的错误，比如空指针引用、数组越界等，或者是程序运行过程中的一些不合法操作。 recover：
+recover 也是一个内建函数，用于在 defer 延迟执行的函数中捕获 panic 引起的错误，使程序能够继续执行而不会被终止。 recover 只能在 defer 中调用，并且只在发生 panic 时才会生效。如果在没有 panic 的情况下调用 recover，它将返回 nil。 当 recover 在 defer 中调用时，如果有 panic 发生，它将会返回被传递给 panic 的值，并且程序将继续执行而不会终止。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 package main import ( &#34;fmt&#34; ) func recoverFromPanic() { if r := recover(); r !]]></description>
+</item>
+</channel>
+</rss>

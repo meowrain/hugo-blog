@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Javascript - 分类 - MeowRain Blog</title>
+    <link>http://localhost:1313/categories/javascript/</link>
+    <description>Javascript - 分类 | MeowRain Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 13:12:26 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/javascript/" rel="self" type="application/rss+xml" /><item>
+  <title>Javascript 面向对象</title>
+  <link>http://localhost:1313/posts/178f51c/</link>
+  <pubDate>Sat, 18 May 2024 13:12:26 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/178f51c/</guid>
+  <description><![CDATA[Javascript 面向对象(OOP)语法1 2 3 4 5 class 类名 { constructor(){ } } 举例:
+1 2 3 4 5 6 7 8 9 10 11 //Person类专门用来创建人的对象 class Person { constructor(name,age,hooby){ this.name = name; this.age = age; this.hooby = hooby; } } //调用构造函数创建对象创建对象 const xiaoming = new Person(&#34;xiaoming&#34;,18,&#39;programming&#39;); console.log(xiaoming) instanceOf用法可以用来检查一个对象是否是由某个类创建,如果某个对象是由某个类创建,那么我们称这个对象是这个类的实例
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 //Person类专门用来创建人的对象 class Person { constructor(name,age,hooby){ this.]]></description>
+</item>
+</channel>
+</rss>

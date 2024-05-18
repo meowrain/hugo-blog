@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>C&#43;&#43; - 标签 - MeowRain Blog</title>
+    <link>http://localhost:1313/tags/c&#43;&#43;/</link>
+    <description>C&#43;&#43; - 标签 | MeowRain Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 13:05:42 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/c&#43;&#43;/" rel="self" type="application/rss+xml" /><item>
+  <title>C&#43;&#43;面向对象</title>
+  <link>http://localhost:1313/posts/ae3b30e/</link>
+  <pubDate>Sat, 18 May 2024 13:05:42 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/ae3b30e/</guid>
+  <description><![CDATA[C++ OOPClass(1)private,protected,publicprivate(默认就是 private)private 声明的类的私有成员只能由同一类的其他成员或者它们的朋友访问
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 #include &lt;iostream&gt; #include &lt;string&gt; class Student { private: int score; public: std::string name; int age; Student(std::string _name,int _age,int _score) : name(_name),age(_age),score(_score){ } void getScore(){ std::cout &lt;&lt; score &lt;&lt; std::endl; } }; int main(void) { Student s(&#34;meow&#34;,18,100); s.getScore(); } 我们如果在 main 函数中直接用对象输出学生的分数，就不能
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 #include &lt;iostream&gt; #include &lt;string&gt; class Student { private: int score; public: std::string name; int age; Student(std::string _name,int _age,int _score) : name(_name),age(_age),score(_score){ } void getScore(){ std::cout &lt;&lt; score &lt;&lt; std::endl; } }; int main(void) { Student s(&#34;meow&#34;,18,100); std::cout &lt;&lt; s.]]></description>
+</item>
+</channel>
+</rss>

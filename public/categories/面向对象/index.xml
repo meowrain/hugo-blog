@@ -1,0 +1,71 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>面向对象 - 分类 - MeowRain Blog</title>
+    <link>http://localhost:1313/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+    <description>面向对象 - 分类 | MeowRain Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 13:12:26 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="self" type="application/rss+xml" /><item>
+  <title>Javascript 面向对象</title>
+  <link>http://localhost:1313/posts/178f51c/</link>
+  <pubDate>Sat, 18 May 2024 13:12:26 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/178f51c/</guid>
+  <description><![CDATA[Javascript 面向对象(OOP)语法1 2 3 4 5 class 类名 { constructor(){ } } 举例:
+1 2 3 4 5 6 7 8 9 10 11 //Person类专门用来创建人的对象 class Person { constructor(name,age,hooby){ this.name = name; this.age = age; this.hooby = hooby; } } //调用构造函数创建对象创建对象 const xiaoming = new Person(&#34;xiaoming&#34;,18,&#39;programming&#39;); console.log(xiaoming) instanceOf用法可以用来检查一个对象是否是由某个类创建,如果某个对象是由某个类创建,那么我们称这个对象是这个类的实例
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 //Person类专门用来创建人的对象 class Person { constructor(name,age,hooby){ this.]]></description>
+</item>
+<item>
+  <title>Java面向对象基础(高级)</title>
+  <link>http://localhost:1313/posts/0112cbb/</link>
+  <pubDate>Sat, 18 May 2024 13:09:43 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/0112cbb/</guid>
+  <description><![CDATA[Java面向对象(高级)面型对象高级 面型对象中级 面型对象初级
+类变量/类方法类变量/类方法-博客园 类变量快速入门介绍类变量（又叫静态变量）是该类的所有对象共享的变量，任何一个该类的对象去访问它时，取到的都是相同的值，同样任何一个该类的对象去修改它时，修改的也是同一个变量。
+定义类变量：访问修饰符 static 数据类型 变量名; 静态变量是类加载的时候，就创建了,所以我们没有创建对象实例 定义一个变量 count ,是一个类变量(静态变量) static 静态 该变量最大的特点就是会被Child 类的所有的对象实例共享
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 package cn.meowrain.classVariable; public class var01 { public static void main(String[] args) { Child child01 = new Child(&#34;mike&#34;); Child child02 = new Child(&#34;john&#34;); child01.count++; child02.count++; System.out.println(&#34;共有&#34; + Child.count + &#34;个小朋友参加了游戏&#34;); } } class Child { private String name; public static int count = 0; public Child(String name){ this.]]></description>
+</item>
+<item>
+  <title>Java面向对象基础(中级)</title>
+  <link>http://localhost:1313/posts/f4f8ed5/</link>
+  <pubDate>Sat, 18 May 2024 13:09:20 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/f4f8ed5/</guid>
+  <description><![CDATA[Java面向对象基础（中级）Consolas, &lsquo;Courier New&rsquo;, monospace
+包包的三大作用1.区分相同名字的类
+2.当类很多的时候，可以很好地管理类
+3.控制访问范围
+包的基本语法1 2 1.package 关键字 2. com.xxxx 表示包名 包的本质分析包的本质就是创建不同的文件夹和目录来保存类文件
+包的命名只能包含数字，下划线，小圆点，但不能用数字开头，也不能是关键字和保留字
+命名规范：
+com.xxxx.usr 用户模块
+com.xxxx.utils 工具模块
+域名反着写，最后加上模块名
+常用的包引入包语法：import 包名.类名
+案例：
+1 2 3 4 5 6 7 8 9 10 11 package cn.meowrain.Object_.package_; import java.util.Scanner; public class package_01 { public static void main(String[] args) { Scanner sc = new Scanner(System.in); int a = sc.nextInt(); System.out.println(a); } } 访问修饰符封装封装介绍封装就是把抽象出的数据[属性]和对数据的操作**[方法]封装在一起，数据被保护在内部，程序的其它部分只有通过被授权的操作[方法]**，才能对数据进行操作]]></description>
+</item>
+<item>
+  <title>Java面向对象基础(初级)</title>
+  <link>http://localhost:1313/posts/61c8cb0/</link>
+  <pubDate>Sat, 18 May 2024 13:08:20 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/61c8cb0/</guid>
+  <description><![CDATA[Java面向对象基础(初级)对面向对象和面向过程的理解
+谈谈你对面向过程和面向对象的理解_智十七°的博客-CSDN博客_面向对象和面向过程的理解
+面向对象的三大特征封装 (Encapsulation) 继承 (Inheritance) 多态 (Polymorphism)
+初识对象和类初次使用对象和类如下，在下面这个代码中，我创建了一个猫类，然后利用猫类创建了两个猫对象，一个赋值给cat01，一个赋值给cat02
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 package cn.meowrain.Object_; public class relean_01 { public static void main(String[] args) { //创建两猫对象 Cat cat01 = new Cat(); cat01.name = &#34;小花&#34;; cat01.age = 1; cat01.color = &#34;花色&#34;; Cat cat02 = new Cat(); cat02.]]></description>
+</item>
+<item>
+  <title>C&#43;&#43;面向对象</title>
+  <link>http://localhost:1313/posts/ae3b30e/</link>
+  <pubDate>Sat, 18 May 2024 13:05:42 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/ae3b30e/</guid>
+  <description><![CDATA[C++ OOPClass(1)private,protected,publicprivate(默认就是 private)private 声明的类的私有成员只能由同一类的其他成员或者它们的朋友访问
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 #include &lt;iostream&gt; #include &lt;string&gt; class Student { private: int score; public: std::string name; int age; Student(std::string _name,int _age,int _score) : name(_name),age(_age),score(_score){ } void getScore(){ std::cout &lt;&lt; score &lt;&lt; std::endl; } }; int main(void) { Student s(&#34;meow&#34;,18,100); s.getScore(); } 我们如果在 main 函数中直接用对象输出学生的分数，就不能
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 #include &lt;iostream&gt; #include &lt;string&gt; class Student { private: int score; public: std::string name; int age; Student(std::string _name,int _age,int _score) : name(_name),age(_age),score(_score){ } void getScore(){ std::cout &lt;&lt; score &lt;&lt; std::endl; } }; int main(void) { Student s(&#34;meow&#34;,18,100); std::cout &lt;&lt; s.]]></description>
+</item>
+</channel>
+</rss>

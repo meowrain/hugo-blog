@@ -1,0 +1,121 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>所有文章 - MeowRain Blog</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>所有文章 | MeowRain Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 13:12:26 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>Javascript 面向对象</title>
+  <link>http://localhost:1313/posts/178f51c/</link>
+  <pubDate>Sat, 18 May 2024 13:12:26 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/178f51c/</guid>
+  <description><![CDATA[Javascript 面向对象(OOP)语法1 2 3 4 5 class 类名 { constructor(){ } } 举例:
+1 2 3 4 5 6 7 8 9 10 11 //Person类专门用来创建人的对象 class Person { constructor(name,age,hooby){ this.name = name; this.age = age; this.hooby = hooby; } } //调用构造函数创建对象创建对象 const xiaoming = new Person(&#34;xiaoming&#34;,18,&#39;programming&#39;); console.log(xiaoming) instanceOf用法可以用来检查一个对象是否是由某个类创建,如果某个对象是由某个类创建,那么我们称这个对象是这个类的实例
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 //Person类专门用来创建人的对象 class Person { constructor(name,age,hooby){ this.]]></description>
+</item>
+<item>
+  <title>Java面向对象基础(高级)</title>
+  <link>http://localhost:1313/posts/0112cbb/</link>
+  <pubDate>Sat, 18 May 2024 13:09:43 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/0112cbb/</guid>
+  <description><![CDATA[Java面向对象(高级)面型对象高级 面型对象中级 面型对象初级
+类变量/类方法类变量/类方法-博客园 类变量快速入门介绍类变量（又叫静态变量）是该类的所有对象共享的变量，任何一个该类的对象去访问它时，取到的都是相同的值，同样任何一个该类的对象去修改它时，修改的也是同一个变量。
+定义类变量：访问修饰符 static 数据类型 变量名; 静态变量是类加载的时候，就创建了,所以我们没有创建对象实例 定义一个变量 count ,是一个类变量(静态变量) static 静态 该变量最大的特点就是会被Child 类的所有的对象实例共享
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 package cn.meowrain.classVariable; public class var01 { public static void main(String[] args) { Child child01 = new Child(&#34;mike&#34;); Child child02 = new Child(&#34;john&#34;); child01.count++; child02.count++; System.out.println(&#34;共有&#34; + Child.count + &#34;个小朋友参加了游戏&#34;); } } class Child { private String name; public static int count = 0; public Child(String name){ this.]]></description>
+</item>
+<item>
+  <title>Java面向对象基础(中级)</title>
+  <link>http://localhost:1313/posts/f4f8ed5/</link>
+  <pubDate>Sat, 18 May 2024 13:09:20 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/f4f8ed5/</guid>
+  <description><![CDATA[Java面向对象基础（中级）Consolas, &lsquo;Courier New&rsquo;, monospace
+包包的三大作用1.区分相同名字的类
+2.当类很多的时候，可以很好地管理类
+3.控制访问范围
+包的基本语法1 2 1.package 关键字 2. com.xxxx 表示包名 包的本质分析包的本质就是创建不同的文件夹和目录来保存类文件
+包的命名只能包含数字，下划线，小圆点，但不能用数字开头，也不能是关键字和保留字
+命名规范：
+com.xxxx.usr 用户模块
+com.xxxx.utils 工具模块
+域名反着写，最后加上模块名
+常用的包引入包语法：import 包名.类名
+案例：
+1 2 3 4 5 6 7 8 9 10 11 package cn.meowrain.Object_.package_; import java.util.Scanner; public class package_01 { public static void main(String[] args) { Scanner sc = new Scanner(System.in); int a = sc.nextInt(); System.out.println(a); } } 访问修饰符封装封装介绍封装就是把抽象出的数据[属性]和对数据的操作**[方法]封装在一起，数据被保护在内部，程序的其它部分只有通过被授权的操作[方法]**，才能对数据进行操作]]></description>
+</item>
+<item>
+  <title>Java面向对象基础(初级)</title>
+  <link>http://localhost:1313/posts/61c8cb0/</link>
+  <pubDate>Sat, 18 May 2024 13:08:20 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/61c8cb0/</guid>
+  <description><![CDATA[Java面向对象基础(初级)对面向对象和面向过程的理解
+谈谈你对面向过程和面向对象的理解_智十七°的博客-CSDN博客_面向对象和面向过程的理解
+面向对象的三大特征封装 (Encapsulation) 继承 (Inheritance) 多态 (Polymorphism)
+初识对象和类初次使用对象和类如下，在下面这个代码中，我创建了一个猫类，然后利用猫类创建了两个猫对象，一个赋值给cat01，一个赋值给cat02
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 package cn.meowrain.Object_; public class relean_01 { public static void main(String[] args) { //创建两猫对象 Cat cat01 = new Cat(); cat01.name = &#34;小花&#34;; cat01.age = 1; cat01.color = &#34;花色&#34;; Cat cat02 = new Cat(); cat02.]]></description>
+</item>
+<item>
+  <title>C&#43;&#43;面向对象</title>
+  <link>http://localhost:1313/posts/ae3b30e/</link>
+  <pubDate>Sat, 18 May 2024 13:05:42 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/ae3b30e/</guid>
+  <description><![CDATA[C++ OOPClass(1)private,protected,publicprivate(默认就是 private)private 声明的类的私有成员只能由同一类的其他成员或者它们的朋友访问
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 #include &lt;iostream&gt; #include &lt;string&gt; class Student { private: int score; public: std::string name; int age; Student(std::string _name,int _age,int _score) : name(_name),age(_age),score(_score){ } void getScore(){ std::cout &lt;&lt; score &lt;&lt; std::endl; } }; int main(void) { Student s(&#34;meow&#34;,18,100); s.getScore(); } 我们如果在 main 函数中直接用对象输出学生的分数，就不能
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 #include &lt;iostream&gt; #include &lt;string&gt; class Student { private: int score; public: std::string name; int age; Student(std::string _name,int _age,int _score) : name(_name),age(_age),score(_score){ } void getScore(){ std::cout &lt;&lt; score &lt;&lt; std::endl; } }; int main(void) { Student s(&#34;meow&#34;,18,100); std::cout &lt;&lt; s.]]></description>
+</item>
+<item>
+  <title>Go Gophercises</title>
+  <link>http://localhost:1313/posts/33dc7d7/</link>
+  <pubDate>Sat, 18 May 2024 13:04:56 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/33dc7d7/</guid>
+  <description><![CDATA[https://courses.calhoun.io/courses/cor_gophercises
+1. Quizhttps://github.com/gophercises/quiz
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 第一部分： 编写一个程序，该程序能够读取通过CSV文件提供的测验（详细信息如下），并向用户展示此测验。程序需记录用户答对和答错的题目数量。无论答案正确与否，都应立即提出下一题。 默认情况下，CSV文件名为problems.csv，但用户应能通过标志自定义文件名。 CSV文件的格式如下：第一列是问题，同一行的第二列则是该问题的答案。 你可以假设测验相对较短（少于100题），且答案为单个词或数字。 测验结束时，程序应输出答对的问题总数和总问题数。对于给出无效答案的问题，视为回答错误。 第二部分： 根据第一部分的要求调整你的程序以添加计时器功能。默认时间限制应为30秒，但也可通过标志进行自定义设置。 一旦超过时间限制，测验应立即停止。也就是说，不应等待用户回答最后一个问题，而应在理想情况下完全停止测验，即使当时正在等待用户的答案也应如此处理。 在计时开始前，应提示用户按下回车键（或其他键）启动计时器；然后题目应逐一出示在屏幕上直至用户提供答案为止。无论答案正确与否都将继续下一题的提问过程直到全部完成测试内容为止！最后依然需要统计出本次答题过程中总共答对了多少道题目以及一共出现了多少道题目信息并展示给参与者查看结果情况哦~同时也要注意那些没有被有效解答过的或者是根本就没有来得及去作答的部分也都算作是错误的哟！ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 package main import ( &#34;context&#34; &#34;encoding/csv&#34; &#34;flag&#34; &#34;fmt&#34; &#34;log&#34; &#34;os&#34; &#34;strconv&#34; &#34;time&#34; ) func CommandLine() (string, int) { csvFileName := flag.]]></description>
+</item>
+<item>
+  <title>Go语言打印进度</title>
+  <link>http://localhost:1313/posts/fc29587/</link>
+  <pubDate>Sat, 18 May 2024 13:03:40 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/fc29587/</guid>
+  <description><![CDATA[就是一直刷新当前行
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 package main import ( &#34;fmt&#34; &#34;time&#34; ) func main() { // 模拟一些操作，比如循环计数 for i := 0; i &lt;= 100; i++ { // 返回到行首 fmt.Print(&#34;\r&#34;) // 输出其他内容 fmt.Printf(&#34;Prefix: &#34;) // 输出进度 fmt.Printf(&#34;Progress: %d%%&#34;, i) // 强制刷新输出缓冲区 fmt.Print(&#34;\033[0m&#34;) // 重置 ANSI 颜色，防止影响后续输出 time.Sleep(100 * time.Millisecond) } fmt.Println(&#34;\nDone!&#34;) // 完成后换行 } ]]></description>
+</item>
+<item>
+  <title>Go 错误处理</title>
+  <link>http://localhost:1313/posts/8a369fa/</link>
+  <pubDate>Sat, 18 May 2024 13:03:05 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/8a369fa/</guid>
+  <description><![CDATA[panic,recover在 Go 语言中，panic 和 recover 是用于处理程序错误和恢复的两个关键机制。
+panic：
+panic 是一个内建函数，用于表示程序发生了无法处理的错误。当发生 panic 时，程序会立即停止执行当前函数的剩余代码，并开始在调用栈中向上逐层执行 deferred 函数，直到达到当前协程的最顶层（即程序的入口函数），然后程序将终止并输出 panic 信息。 panic 通常用于表示不可恢复的错误，比如空指针引用、数组越界等，或者是程序运行过程中的一些不合法操作。 recover：
+recover 也是一个内建函数，用于在 defer 延迟执行的函数中捕获 panic 引起的错误，使程序能够继续执行而不会被终止。 recover 只能在 defer 中调用，并且只在发生 panic 时才会生效。如果在没有 panic 的情况下调用 recover，它将返回 nil。 当 recover 在 defer 中调用时，如果有 panic 发生，它将会返回被传递给 panic 的值，并且程序将继续执行而不会终止。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 package main import ( &#34;fmt&#34; ) func recoverFromPanic() { if r := recover(); r !]]></description>
+</item>
+<item>
+  <title>Go Gob</title>
+  <link>http://localhost:1313/posts/a47021b/</link>
+  <pubDate>Sat, 18 May 2024 13:02:07 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/a47021b/</guid>
+  <description><![CDATA[介绍Go的gob是Go语言标准库中的一种序列化/反序列化格式，主要用于在编码和解码时传输和存储Go数据结构。Gob格式专为Go语言设计，提供了一种高效的二进制编码方式，特别适合在网络通信和文件存储中使用。
+以下是Go的gob包的一些关键特性和使用方法：
+特性 高效的二进制编码：Gob格式比JSON和XML等文本格式更为紧凑和高效，因为它使用二进制表示数据。 面向Go语言：Gob格式支持Go语言中的复杂数据结构，包括嵌套结构、切片、映射等。 自动化的编码和解码：使用gob包可以自动处理编码和解码过程，无需手动序列化和反序列化。
+例子1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 package main import ( &#34;bytes&#34; &#34;encoding/gob&#34; &#34;fmt&#34; &#34;log&#34; &#34;os&#34; ) type Person struct { Name string Age int } func main() { // 创建一个Person实例 person := Person{Name: &#34;Alice&#34;, Age: 30} // 创建一个缓冲区来存储编码后的数据 var buf bytes.]]></description>
+</item>
+<item>
+  <title>Go Json解码和编码</title>
+  <link>http://localhost:1313/posts/35b4611/</link>
+  <pubDate>Sat, 18 May 2024 13:00:48 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/35b4611/</guid>
+  <description><![CDATA[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 vcard.go package vcard import ( &#34;time&#34; ) type Address struct { Street string HouseNumber uint32 HouseNumberAddOn string POBox string ZipCode string City string Country string } type VCard struct { FirstName string LastName string NickName string BirtDate time.Time Photo string Addresses map[string]*Address } 1 2 3 4 5 6 7 8 9 10 11 jsonUtil.]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>编译原理 - 分类 - MeowRain Blog</title>
+    <link>http://localhost:1313/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</link>
+    <description>编译原理 - 分类 | MeowRain Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Wed, 15 May 2024 19:11:35 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="self" type="application/rss+xml" /><item>
+  <title>Go实现词法分析器</title>
+  <link>http://localhost:1313/posts/1e5f18a/</link>
+  <pubDate>Wed, 15 May 2024 19:11:35 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/1e5f18a/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>Go实现递归向下分析</title>
+  <link>http://localhost:1313/posts/274359a/</link>
+  <pubDate>Wed, 15 May 2024 19:08:42 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>http://localhost:1313/posts/274359a/</guid>
+  <description><![CDATA[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 package main import ( &#34;bufio&#34; &#34;fmt&#34; &#34;os&#34; &#34;strings&#34; ) var ( str []byte pointer int error_str string = &#34;Error: 非法的符号串&#34; withNoSharp string = &#34;Error: 符号串必须以#结尾&#34; ) // 打印颜色设置 const Red = &#34;\033[31m&#34; const Green = &#34;\033[32m&#34; const Reset = &#34;\033[0m&#34; const Yellow = &#34;\033[33m&#34; func match(token byte) { if pointer &gt;= len(str) { errors(error_str) return } if str[pointer] == token { pointer++ } else { errors(error_str) } } func errors(info string) { fmt.]]></description>
+</item>
+</channel>
+</rss>
