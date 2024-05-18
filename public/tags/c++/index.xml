@@ -1,35 +1,35 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>C&#43;&#43; - 标签 - MeowRain Blog</title>
-    <link>http://localhost:1313/tags/c&#43;&#43;/</link>
+    <link>https://example.org/tags/c&#43;&#43;/</link>
     <description>C&#43;&#43; - 标签 | MeowRain Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
-      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 14:27:09 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/c&#43;&#43;/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 14:27:09 &#43;0800</lastBuildDate><atom:link href="https://example.org/tags/c&#43;&#43;/" rel="self" type="application/rss+xml" /><item>
   <title>C&#43;&#43; Const与function</title>
-  <link>http://localhost:1313/posts/2a356ef/</link>
+  <link>https://example.org/posts/2a356ef/</link>
   <pubDate>Sat, 18 May 2024 14:27:09 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/2a356ef/</guid>
-  <description><![CDATA[const与function在c++中，const在function中有不一样的使用
+  <guid>https://example.org/posts/2a356ef/</guid>
+  <description><![CDATA[const与function 在c++中，const在function中有不一样的使用
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 #include &lt;iostream&gt; #include &lt;string&gt; class Example { public: Example(const std::string &amp;name) : m_Name(name) {} const std::string&amp; GetName() const {return m_Name;}; private: std::string m_Name; }; int main() { Example example(&#34;John&#34;); const std::string&amp; name = example.GetName(); std::cout &lt;&lt; name &lt;&lt; std::endl;//输出 “John&#34; // name = &#34;Alice&#34;; //wrong } 这个函数的返回值是一个指向常量字符串的引用。const修饰的是返回值的类型，表示返回的字符串是一个常量，不能被修改。
 函数签名中的第二个const修饰的是成员函数本身，表示这个函数是一个const成员函数，即在该函数内部不能修改类的成员变量。
 因此，这个函数返回一个指向常量字符串的引用，并且在该函数内部不修改类的成员变量。]]></description>
 </item>
 <item>
   <title>C&#43;&#43;STL</title>
-  <link>http://localhost:1313/posts/4b6605b/</link>
+  <link>https://example.org/posts/4b6605b/</link>
   <pubDate>Sat, 18 May 2024 14:26:09 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/4b6605b/</guid>
-  <description><![CDATA[C++ STLvectorvector构造器1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 #include &lt;vector&gt; #include &lt;iostream&gt; /* vector&lt;T&gt; v; // 采用模版类实现，默认构造函数 vector&lt;T&gt; v(T* v1.begin(), T* v1.end()); // 将v1[begin(), end())区间中的元素拷贝给本身 vector&lt;T&gt; v(int n, T elem); // 将n个elem拷贝给本身 vector&lt;T&gt; v(const vector&lt;T&gt; v1); // 拷贝构造函数 */ int main(void) { std::vector&lt;int&gt; v; // 默认构造函数 for(int i = 0;i&lt;10;i++) { v.]]></description>
+  <guid>https://example.org/posts/4b6605b/</guid>
+  <description><![CDATA[C++ STL vector vector构造器 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 #include &lt;vector&gt; #include &lt;iostream&gt; /* vector&lt;T&gt; v; // 采用模版类实现，默认构造函数 vector&lt;T&gt; v(T* v1.begin(), T* v1.end()); // 将v1[begin(), end())区间中的元素拷贝给本身 vector&lt;T&gt; v(int n, T elem); // 将n个elem拷贝给本身 vector&lt;T&gt; v(const vector&lt;T&gt; v1); // 拷贝构造函数 */ int main(void) { std::vector&lt;int&gt; v; // 默认构造函数 for(int i = 0;i&lt;10;i++) { v.]]></description>
 </item>
 <item>
   <title>C&#43;&#43;面向对象</title>
-  <link>http://localhost:1313/posts/ae3b30e/</link>
+  <link>https://example.org/posts/ae3b30e/</link>
   <pubDate>Sat, 18 May 2024 13:05:42 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/ae3b30e/</guid>
-  <description><![CDATA[C++ OOPClass(1)private,protected,publicprivate(默认就是 private)private 声明的类的私有成员只能由同一类的其他成员或者它们的朋友访问
+  <guid>https://example.org/posts/ae3b30e/</guid>
+  <description><![CDATA[C++ OOP Class(1) private,protected,public private(默认就是 private) private 声明的类的私有成员只能由同一类的其他成员或者它们的朋友访问
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 #include &lt;iostream&gt; #include &lt;string&gt; class Student { private: int score; public: std::string name; int age; Student(std::string _name,int _age,int _score) : name(_name),age(_age),score(_score){ } void getScore(){ std::cout &lt;&lt; score &lt;&lt; std::endl; } }; int main(void) { Student s(&#34;meow&#34;,18,100); s.getScore(); } 我们如果在 main 函数中直接用对象输出学生的分数，就不能
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 #include &lt;iostream&gt; #include &lt;string&gt; class Student { private: int score; public: std::string name; int age; Student(std::string _name,int _age,int _score) : name(_name),age(_age),score(_score){ } void getScore(){ std::cout &lt;&lt; score &lt;&lt; std::endl; } }; int main(void) { Student s(&#34;meow&#34;,18,100); std::cout &lt;&lt; s.]]></description>
 </item>

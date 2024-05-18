@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -8,22 +8,22 @@
     <title>设计模式 - MeowRain Blog</title><meta name="author" content="meowrain">
 <meta name="author-link" content="">
 <meta name="description" content="[TOC]
-面向对象相关知识面向对象类关系(继承、实现、依赖、关联、聚合、组合)：https://www.cnblogs.com/zhongj/p/11169780.html
+面向对象相关知识 面向对象类关系(继承、实现、依赖、关联、聚合、组合)：https://www.cnblogs.com/zhongj/p/11169780.html
 UML: https://blog.csdn.net/quyingzhe0217/article/details/133683814
-创建型模式创建型设计模式包括以下几种常见的模式：
+创建型模式 创建型设计模式包括以下几种常见的模式：
 工厂模式（Factory Pattern）：通过工厂方法或抽象工厂来创建对象，将对象的创建过程封装起来，使得客户端代码与具体类解耦。
 抽象工厂模式（Abstract Factory Pattern）：提供一个接口，用于创建相关或依赖对象的家族，而不需要指定具体类。
 单例模式（Singleton Pattern）：确保一个类只有一个实例，并提供一个全局访问点来访问该实例。
 建造者模式（Builder Pattern）：将一个复杂对象的构建过程与其表示分离，使得同样的构建过程可以创建不同的表示。
 原型模式（Prototype Pattern）：通过复制现有对象来创建新对象，而不是通过实例化来创建。
-结构型模式结构型设计模式主要包括以下几种常见的模式： 适配器模式（Adapter Pattern）：将一个类的接口转换成客户端所期望的另一个接口，使得原本不兼容的类可以一起工作。
+结构型模式 结构型设计模式主要包括以下几种常见的模式： 适配器模式（Adapter Pattern）：将一个类的接口转换成客户端所期望的另一个接口，使得原本不兼容的类可以一起工作。
 桥接模式（Bridge Pattern）：将抽象部分与实现部分分离，使它们可以独立地变化，从而提高系统的灵活性。
 组合模式（Composite Pattern）：将对象组合成树形结构，以表示“部分-整体”的层次结构，使得客户端可以统一地处理单个对象和组合对象。
 装饰器模式（Decorator Pattern）：动态地给对象添加额外的职责，同时又不改变其接口。
 外观模式（Facade Pattern）：提供一个统一的接口，用于访问子系统中的一组接口，从而简化客户端与子系统之间的交互。
 享元模式（Flyweight Pattern）：通过共享细粒度的对象，以减少内存使用和提高性能。
 代理模式（Proxy Pattern）：为其他对象提供一个代理，以控制对这个对象的访问。
-行为模式行为型设计模式主要包括以下几种常见的模式：
+行为模式 行为型设计模式主要包括以下几种常见的模式：
 观察者模式（Observer Pattern）：定义了一种一对多的依赖关系，使得多个观察者对象可以同时监听并收到被观察者对象的通知。
 策略模式（Strategy Pattern）：定义了一系列算法，并将每个算法封装起来，使它们可以相互替换，从而使算法的变化独立于使用算法的客户端。
 命令模式（Command Pattern）：将请求封装成对象，以使得可以用不同的请求对客户端进行参数化，同时支持请求的排队、记录和撤销。
@@ -34,27 +34,27 @@ UML: https://blog.csdn.net/quyingzhe0217/article/details/133683814
 中介者模式（Mediator Pattern）：定义了一个中介对象，封装了一组对象之间的交互方式，使其能够独立地改变交互方式。
 备忘录模式（Memento Pattern）：在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态，从而可以在以后恢复到这个状态。
 解释器模式（Interpreter Pattern）：给定一个语言，定义它的文法的一种表示，并定义一个解释器，用于解释语言中的句子。
-工厂方法模式 factory_method工厂方法模式是一种创建型设计模式， 其在父类中提供一个创建对象的方法， 允许子类决定实例化对象的类型。
+工厂方法模式 factory_method 工厂方法模式是一种创建型设计模式， 其在父类中提供一个创建对象的方法， 允许子类决定实例化对象的类型。
 问题： 假设你正在开发一款物流管理应用。 最初版本只能处理卡车运输， 因此大部分代码都在位于名为 卡车的类中。
 一段时间后， 这款应用变得极受欢迎。 你每天都能收到十几次来自海运公司的请求， 希望应用能够支持海上物流功能。" /><meta name="keywords" content='设计模式, 面向对象' />
   <meta itemprop="name" content="设计模式">
   <meta itemprop="description" content="[TOC]
-面向对象相关知识面向对象类关系(继承、实现、依赖、关联、聚合、组合)：https://www.cnblogs.com/zhongj/p/11169780.html
+面向对象相关知识 面向对象类关系(继承、实现、依赖、关联、聚合、组合)：https://www.cnblogs.com/zhongj/p/11169780.html
 UML: https://blog.csdn.net/quyingzhe0217/article/details/133683814
-创建型模式创建型设计模式包括以下几种常见的模式：
+创建型模式 创建型设计模式包括以下几种常见的模式：
 工厂模式（Factory Pattern）：通过工厂方法或抽象工厂来创建对象，将对象的创建过程封装起来，使得客户端代码与具体类解耦。
 抽象工厂模式（Abstract Factory Pattern）：提供一个接口，用于创建相关或依赖对象的家族，而不需要指定具体类。
 单例模式（Singleton Pattern）：确保一个类只有一个实例，并提供一个全局访问点来访问该实例。
 建造者模式（Builder Pattern）：将一个复杂对象的构建过程与其表示分离，使得同样的构建过程可以创建不同的表示。
 原型模式（Prototype Pattern）：通过复制现有对象来创建新对象，而不是通过实例化来创建。
-结构型模式结构型设计模式主要包括以下几种常见的模式： 适配器模式（Adapter Pattern）：将一个类的接口转换成客户端所期望的另一个接口，使得原本不兼容的类可以一起工作。
+结构型模式 结构型设计模式主要包括以下几种常见的模式： 适配器模式（Adapter Pattern）：将一个类的接口转换成客户端所期望的另一个接口，使得原本不兼容的类可以一起工作。
 桥接模式（Bridge Pattern）：将抽象部分与实现部分分离，使它们可以独立地变化，从而提高系统的灵活性。
 组合模式（Composite Pattern）：将对象组合成树形结构，以表示“部分-整体”的层次结构，使得客户端可以统一地处理单个对象和组合对象。
 装饰器模式（Decorator Pattern）：动态地给对象添加额外的职责，同时又不改变其接口。
 外观模式（Facade Pattern）：提供一个统一的接口，用于访问子系统中的一组接口，从而简化客户端与子系统之间的交互。
 享元模式（Flyweight Pattern）：通过共享细粒度的对象，以减少内存使用和提高性能。
 代理模式（Proxy Pattern）：为其他对象提供一个代理，以控制对这个对象的访问。
-行为模式行为型设计模式主要包括以下几种常见的模式：
+行为模式 行为型设计模式主要包括以下几种常见的模式：
 观察者模式（Observer Pattern）：定义了一种一对多的依赖关系，使得多个观察者对象可以同时监听并收到被观察者对象的通知。
 策略模式（Strategy Pattern）：定义了一系列算法，并将每个算法封装起来，使它们可以相互替换，从而使算法的变化独立于使用算法的客户端。
 命令模式（Command Pattern）：将请求封装成对象，以使得可以用不同的请求对客户端进行参数化，同时支持请求的排队、记录和撤销。
@@ -65,32 +65,32 @@ UML: https://blog.csdn.net/quyingzhe0217/article/details/133683814
 中介者模式（Mediator Pattern）：定义了一个中介对象，封装了一组对象之间的交互方式，使其能够独立地改变交互方式。
 备忘录模式（Memento Pattern）：在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态，从而可以在以后恢复到这个状态。
 解释器模式（Interpreter Pattern）：给定一个语言，定义它的文法的一种表示，并定义一个解释器，用于解释语言中的句子。
-工厂方法模式 factory_method工厂方法模式是一种创建型设计模式， 其在父类中提供一个创建对象的方法， 允许子类决定实例化对象的类型。
+工厂方法模式 factory_method 工厂方法模式是一种创建型设计模式， 其在父类中提供一个创建对象的方法， 允许子类决定实例化对象的类型。
 问题： 假设你正在开发一款物流管理应用。 最初版本只能处理卡车运输， 因此大部分代码都在位于名为 卡车的类中。
 一段时间后， 这款应用变得极受欢迎。 你每天都能收到十几次来自海运公司的请求， 希望应用能够支持海上物流功能。">
   <meta itemprop="datePublished" content="2024-05-15T19:31:42+08:00">
   <meta itemprop="dateModified" content="2024-05-15T19:31:42+08:00">
   <meta itemprop="wordCount" content="445">
-  <meta itemprop="keywords" content="设计模式,面向对象"><meta property="og:url" content="http://localhost:1313/posts/a44e805/">
+  <meta itemprop="keywords" content="设计模式,面向对象"><meta property="og:url" content="https://example.org/posts/a44e805/">
   <meta property="og:site_name" content="MeowRain Blog">
   <meta property="og:title" content="设计模式">
   <meta property="og:description" content="[TOC]
-面向对象相关知识面向对象类关系(继承、实现、依赖、关联、聚合、组合)：https://www.cnblogs.com/zhongj/p/11169780.html
+面向对象相关知识 面向对象类关系(继承、实现、依赖、关联、聚合、组合)：https://www.cnblogs.com/zhongj/p/11169780.html
 UML: https://blog.csdn.net/quyingzhe0217/article/details/133683814
-创建型模式创建型设计模式包括以下几种常见的模式：
+创建型模式 创建型设计模式包括以下几种常见的模式：
 工厂模式（Factory Pattern）：通过工厂方法或抽象工厂来创建对象，将对象的创建过程封装起来，使得客户端代码与具体类解耦。
 抽象工厂模式（Abstract Factory Pattern）：提供一个接口，用于创建相关或依赖对象的家族，而不需要指定具体类。
 单例模式（Singleton Pattern）：确保一个类只有一个实例，并提供一个全局访问点来访问该实例。
 建造者模式（Builder Pattern）：将一个复杂对象的构建过程与其表示分离，使得同样的构建过程可以创建不同的表示。
 原型模式（Prototype Pattern）：通过复制现有对象来创建新对象，而不是通过实例化来创建。
-结构型模式结构型设计模式主要包括以下几种常见的模式： 适配器模式（Adapter Pattern）：将一个类的接口转换成客户端所期望的另一个接口，使得原本不兼容的类可以一起工作。
+结构型模式 结构型设计模式主要包括以下几种常见的模式： 适配器模式（Adapter Pattern）：将一个类的接口转换成客户端所期望的另一个接口，使得原本不兼容的类可以一起工作。
 桥接模式（Bridge Pattern）：将抽象部分与实现部分分离，使它们可以独立地变化，从而提高系统的灵活性。
 组合模式（Composite Pattern）：将对象组合成树形结构，以表示“部分-整体”的层次结构，使得客户端可以统一地处理单个对象和组合对象。
 装饰器模式（Decorator Pattern）：动态地给对象添加额外的职责，同时又不改变其接口。
 外观模式（Facade Pattern）：提供一个统一的接口，用于访问子系统中的一组接口，从而简化客户端与子系统之间的交互。
 享元模式（Flyweight Pattern）：通过共享细粒度的对象，以减少内存使用和提高性能。
 代理模式（Proxy Pattern）：为其他对象提供一个代理，以控制对这个对象的访问。
-行为模式行为型设计模式主要包括以下几种常见的模式：
+行为模式 行为型设计模式主要包括以下几种常见的模式：
 观察者模式（Observer Pattern）：定义了一种一对多的依赖关系，使得多个观察者对象可以同时监听并收到被观察者对象的通知。
 策略模式（Strategy Pattern）：定义了一系列算法，并将每个算法封装起来，使它们可以相互替换，从而使算法的变化独立于使用算法的客户端。
 命令模式（Command Pattern）：将请求封装成对象，以使得可以用不同的请求对客户端进行参数化，同时支持请求的排队、记录和撤销。
@@ -101,7 +101,7 @@ UML: https://blog.csdn.net/quyingzhe0217/article/details/133683814
 中介者模式（Mediator Pattern）：定义了一个中介对象，封装了一组对象之间的交互方式，使其能够独立地改变交互方式。
 备忘录模式（Memento Pattern）：在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态，从而可以在以后恢复到这个状态。
 解释器模式（Interpreter Pattern）：给定一个语言，定义它的文法的一种表示，并定义一个解释器，用于解释语言中的句子。
-工厂方法模式 factory_method工厂方法模式是一种创建型设计模式， 其在父类中提供一个创建对象的方法， 允许子类决定实例化对象的类型。
+工厂方法模式 factory_method 工厂方法模式是一种创建型设计模式， 其在父类中提供一个创建对象的方法， 允许子类决定实例化对象的类型。
 问题： 假设你正在开发一款物流管理应用。 最初版本只能处理卡车运输， 因此大部分代码都在位于名为 卡车的类中。
 一段时间后， 这款应用变得极受欢迎。 你每天都能收到十几次来自海运公司的请求， 希望应用能够支持海上物流功能。">
   <meta property="og:locale" content="zh_cn">
@@ -115,22 +115,22 @@ UML: https://blog.csdn.net/quyingzhe0217/article/details/133683814
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="设计模式">
   <meta name="twitter:description" content="[TOC]
-面向对象相关知识面向对象类关系(继承、实现、依赖、关联、聚合、组合)：https://www.cnblogs.com/zhongj/p/11169780.html
+面向对象相关知识 面向对象类关系(继承、实现、依赖、关联、聚合、组合)：https://www.cnblogs.com/zhongj/p/11169780.html
 UML: https://blog.csdn.net/quyingzhe0217/article/details/133683814
-创建型模式创建型设计模式包括以下几种常见的模式：
+创建型模式 创建型设计模式包括以下几种常见的模式：
 工厂模式（Factory Pattern）：通过工厂方法或抽象工厂来创建对象，将对象的创建过程封装起来，使得客户端代码与具体类解耦。
 抽象工厂模式（Abstract Factory Pattern）：提供一个接口，用于创建相关或依赖对象的家族，而不需要指定具体类。
 单例模式（Singleton Pattern）：确保一个类只有一个实例，并提供一个全局访问点来访问该实例。
 建造者模式（Builder Pattern）：将一个复杂对象的构建过程与其表示分离，使得同样的构建过程可以创建不同的表示。
 原型模式（Prototype Pattern）：通过复制现有对象来创建新对象，而不是通过实例化来创建。
-结构型模式结构型设计模式主要包括以下几种常见的模式： 适配器模式（Adapter Pattern）：将一个类的接口转换成客户端所期望的另一个接口，使得原本不兼容的类可以一起工作。
+结构型模式 结构型设计模式主要包括以下几种常见的模式： 适配器模式（Adapter Pattern）：将一个类的接口转换成客户端所期望的另一个接口，使得原本不兼容的类可以一起工作。
 桥接模式（Bridge Pattern）：将抽象部分与实现部分分离，使它们可以独立地变化，从而提高系统的灵活性。
 组合模式（Composite Pattern）：将对象组合成树形结构，以表示“部分-整体”的层次结构，使得客户端可以统一地处理单个对象和组合对象。
 装饰器模式（Decorator Pattern）：动态地给对象添加额外的职责，同时又不改变其接口。
 外观模式（Facade Pattern）：提供一个统一的接口，用于访问子系统中的一组接口，从而简化客户端与子系统之间的交互。
 享元模式（Flyweight Pattern）：通过共享细粒度的对象，以减少内存使用和提高性能。
 代理模式（Proxy Pattern）：为其他对象提供一个代理，以控制对这个对象的访问。
-行为模式行为型设计模式主要包括以下几种常见的模式：
+行为模式 行为型设计模式主要包括以下几种常见的模式：
 观察者模式（Observer Pattern）：定义了一种一对多的依赖关系，使得多个观察者对象可以同时监听并收到被观察者对象的通知。
 策略模式（Strategy Pattern）：定义了一系列算法，并将每个算法封装起来，使它们可以相互替换，从而使算法的变化独立于使用算法的客户端。
 命令模式（Command Pattern）：将请求封装成对象，以使得可以用不同的请求对客户端进行参数化，同时支持请求的排队、记录和撤销。
@@ -141,13 +141,13 @@ UML: https://blog.csdn.net/quyingzhe0217/article/details/133683814
 中介者模式（Mediator Pattern）：定义了一个中介对象，封装了一组对象之间的交互方式，使其能够独立地改变交互方式。
 备忘录模式（Memento Pattern）：在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态，从而可以在以后恢复到这个状态。
 解释器模式（Interpreter Pattern）：给定一个语言，定义它的文法的一种表示，并定义一个解释器，用于解释语言中的句子。
-工厂方法模式 factory_method工厂方法模式是一种创建型设计模式， 其在父类中提供一个创建对象的方法， 允许子类决定实例化对象的类型。
+工厂方法模式 factory_method 工厂方法模式是一种创建型设计模式， 其在父类中提供一个创建对象的方法， 允许子类决定实例化对象的类型。
 问题： 假设你正在开发一款物流管理应用。 最初版本只能处理卡车运输， 因此大部分代码都在位于名为 卡车的类中。
 一段时间后， 这款应用变得极受欢迎。 你每天都能收到十几次来自海运公司的请求， 希望应用能够支持海上物流功能。">
 <meta name="application-name" content="MeowRain&#39;s Blog">
 <meta name="apple-mobile-web-app-title" content="MeowRain&#39;s Blog"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/posts/a44e805/" /><link rel="prev" href="http://localhost:1313/posts/2f5f3f2/" /><link rel="next" href="http://localhost:1313/friends/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://example.org/posts/a44e805/" /><link rel="prev" href="https://example.org/posts/2f5f3f2/" /><link rel="next" href="https://example.org/friends/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -157,9 +157,9 @@ UML: https://blog.csdn.net/quyingzhe0217/article/details/133683814
     "inLanguage": "zh-cn",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "http:\/\/localhost:1313\/posts\/a44e805\/"
+      "@id": "https:\/\/example.org\/posts\/a44e805\/"
     },"genre": "posts","keywords": "设计模式, 面向对象","wordcount":  445 ,
-    "url": "http:\/\/localhost:1313\/posts\/a44e805\/","datePublished": "2024-05-15T19:31:42+08:00","dateModified": "2024-05-15T19:31:42+08:00","publisher": {
+    "url": "https:\/\/example.org\/posts\/a44e805\/","datePublished": "2024-05-15T19:31:42+08:00","dateModified": "2024-05-15T19:31:42+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -593,11 +593,11 @@ Transport相当于Product接口，下面的Ship和Truck是实现这个接口的�
       <div class="post-info-mod">
         <span title="更新于 2024-05-15 19:31:42">更新于 2024-05-15&nbsp;</span>
       </div></div><div class="post-info-line">
-        <div class="post-info-md"><span><a href="/posts/a44e805/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span><span><a href="https://github.com/meowrain/hugo-blog/blob/main/content/posts%5c%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f.md?plain=1" title="查看源码"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">查看源码</a></span><span><a href="https://github.com/meowrain/hugo-blog/edit/main/content/posts%5c%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span><span><a href="https://github.com/meowrain/hugo-blog/issues/new?title=[BUG]%20%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7c%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%7c%0A%7cURL%7chttp://localhost:1313/posts/a44e805/%7c%0A%7cFilename%7chttps://github.com/meowrain/hugo-blog/blob/main/content/posts%5c%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f.md?plain=1%7c" title="报告问题"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">报告问题</a></span></div>
+        <div class="post-info-md"><span><a href="/posts/a44e805/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span><span><a href="https://github.com/meowrain/hugo-blog/blob/main/content/posts/%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f.md?plain=1" title="查看源码"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">查看源码</a></span><span><a href="https://github.com/meowrain/hugo-blog/edit/main/content/posts/%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span><span><a href="https://github.com/meowrain/hugo-blog/issues/new?title=[BUG]%20%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7c%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%7c%0A%7cURL%7chttps://example.org/posts/a44e805/%7c%0A%7cFilename%7chttps://github.com/meowrain/hugo-blog/blob/main/content/posts/%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f.md?plain=1%7c" title="报告问题"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">报告问题</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/posts/a44e805/" data-title="设计模式" data-hashtags="设计模式,面向对象"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/a44e805/" data-hashtag="设计模式"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/a44e805/" data-title="设计模式"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://example.org/posts/a44e805/" data-title="设计模式" data-hashtags="设计模式,面向对象"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://example.org/posts/a44e805/" data-hashtag="设计模式"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://example.org/posts/a44e805/" data-title="设计模式"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
@@ -610,17 +610,24 @@ Transport相当于Product接口，下面的Ship和Truck是实现这个接口的�
   </div>
 
   <div class="post-nav"><a href="/posts/2f5f3f2/" class="post-nav-item" rel="prev" title="Go Flag库使用"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Go Flag库使用</a>
-      <a href="/posts/ad3706c/" class="post-nav-item" rel="next" title="Go缓冲区例题">Go缓冲区例题<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+      <a href="/posts/35b4611/" class="post-nav-item" rel="next" title="Go Json解码和编码">Go Json解码和编码<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article>
 
   <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered"><p>本网站由<img src="https://static.meowrain.cn/i/2024/05/18/o04s8t-3.webp">提供CDN加速/云存储服务</p>由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.126.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.6"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
-        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
-            <span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">
-              <a href="/">meowrain</a></span></div></div>
-  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+  <div class="footer-container"><div class="footer-line powered"><div>本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referra"><img
+            src="https://static.meowrain.cn/i/2024/05/18/o04s8t-3.webp" align="absmiddle" width="59px"
+            height="30px" /></a>
+        <span>提供CDN加速/云存储服务</span>
+      </div>由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer"
+        title="Hugo 0.126.1"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external"
+        title="FixIt v0.3.6"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    </div><div class="footer-line copyright" itemscope
+      itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+      <span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">
+        <a href="/">meowrain</a></span></div></div>
+</footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
         </div></div><a href="https://github.com/meowrain/hugo-blog" title="View source on GitHub"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>

@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
     <title>Go 错误处理 - MeowRain Blog</title><meta name="author" content="meowrain">
 <meta name="author-link" content="">
-<meta name="description" content="panic,recover在 Go 语言中，panic 和 recover 是用于处理程序错误和恢复的两个关键机制。
+<meta name="description" content="panic,recover 在 Go 语言中，panic 和 recover 是用于处理程序错误和恢复的两个关键机制。
 panic：
 panic 是一个内建函数，用于表示程序发生了无法处理的错误。当发生 panic 时，程序会立即停止执行当前函数的剩余代码，并开始在调用栈中向上逐层执行 deferred 函数，直到达到当前协程的最顶层（即程序的入口函数），然后程序将终止并输出 panic 信息。 panic 通常用于表示不可恢复的错误，比如空指针引用、数组越界等，或者是程序运行过程中的一些不合法操作。 recover：
 recover 也是一个内建函数，用于在 defer 延迟执行的函数中捕获 panic 引起的错误，使程序能够继续执行而不会被终止。 recover 只能在 defer 中调用，并且只在发生 panic 时才会生效。如果在没有 panic 的情况下调用 recover，它将返回 nil。 当 recover 在 defer 中调用时，如果有 panic 发生，它将会返回被传递给 panic 的值，并且程序将继续执行而不会终止。
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 package main import ( &#34;fmt&#34; ) func recoverFromPanic() { if r := recover(); r !" /><meta name="keywords" content='Go, Go错误处理' />
   <meta itemprop="name" content="Go 错误处理">
-  <meta itemprop="description" content="panic,recover在 Go 语言中，panic 和 recover 是用于处理程序错误和恢复的两个关键机制。
+  <meta itemprop="description" content="panic,recover 在 Go 语言中，panic 和 recover 是用于处理程序错误和恢复的两个关键机制。
 panic：
 panic 是一个内建函数，用于表示程序发生了无法处理的错误。当发生 panic 时，程序会立即停止执行当前函数的剩余代码，并开始在调用栈中向上逐层执行 deferred 函数，直到达到当前协程的最顶层（即程序的入口函数），然后程序将终止并输出 panic 信息。 panic 通常用于表示不可恢复的错误，比如空指针引用、数组越界等，或者是程序运行过程中的一些不合法操作。 recover：
 recover 也是一个内建函数，用于在 defer 延迟执行的函数中捕获 panic 引起的错误，使程序能够继续执行而不会被终止。 recover 只能在 defer 中调用，并且只在发生 panic 时才会生效。如果在没有 panic 的情况下调用 recover，它将返回 nil。 当 recover 在 defer 中调用时，如果有 panic 发生，它将会返回被传递给 panic 的值，并且程序将继续执行而不会终止。
@@ -21,10 +21,10 @@ recover 也是一个内建函数，用于在 defer 延迟执行的函数中捕�
   <meta itemprop="datePublished" content="2024-05-18T13:03:05+08:00">
   <meta itemprop="dateModified" content="2024-05-18T13:03:05+08:00">
   <meta itemprop="wordCount" content="166">
-  <meta itemprop="keywords" content="Go,Go错误处理"><meta property="og:url" content="http://localhost:1313/posts/8a369fa/">
+  <meta itemprop="keywords" content="Go,Go错误处理"><meta property="og:url" content="https://example.org/posts/8a369fa/">
   <meta property="og:site_name" content="MeowRain Blog">
   <meta property="og:title" content="Go 错误处理">
-  <meta property="og:description" content="panic,recover在 Go 语言中，panic 和 recover 是用于处理程序错误和恢复的两个关键机制。
+  <meta property="og:description" content="panic,recover 在 Go 语言中，panic 和 recover 是用于处理程序错误和恢复的两个关键机制。
 panic：
 panic 是一个内建函数，用于表示程序发生了无法处理的错误。当发生 panic 时，程序会立即停止执行当前函数的剩余代码，并开始在调用栈中向上逐层执行 deferred 函数，直到达到当前协程的最顶层（即程序的入口函数），然后程序将终止并输出 panic 信息。 panic 通常用于表示不可恢复的错误，比如空指针引用、数组越界等，或者是程序运行过程中的一些不合法操作。 recover：
 recover 也是一个内建函数，用于在 defer 延迟执行的函数中捕获 panic 引起的错误，使程序能够继续执行而不会被终止。 recover 只能在 defer 中调用，并且只在发生 panic 时才会生效。如果在没有 panic 的情况下调用 recover，它将返回 nil。 当 recover 在 defer 中调用时，如果有 panic 发生，它将会返回被传递给 panic 的值，并且程序将继续执行而不会终止。
@@ -39,7 +39,7 @@ recover 也是一个内建函数，用于在 defer 延迟执行的函数中捕�
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Go 错误处理">
-  <meta name="twitter:description" content="panic,recover在 Go 语言中，panic 和 recover 是用于处理程序错误和恢复的两个关键机制。
+  <meta name="twitter:description" content="panic,recover 在 Go 语言中，panic 和 recover 是用于处理程序错误和恢复的两个关键机制。
 panic：
 panic 是一个内建函数，用于表示程序发生了无法处理的错误。当发生 panic 时，程序会立即停止执行当前函数的剩余代码，并开始在调用栈中向上逐层执行 deferred 函数，直到达到当前协程的最顶层（即程序的入口函数），然后程序将终止并输出 panic 信息。 panic 通常用于表示不可恢复的错误，比如空指针引用、数组越界等，或者是程序运行过程中的一些不合法操作。 recover：
 recover 也是一个内建函数，用于在 defer 延迟执行的函数中捕获 panic 引起的错误，使程序能够继续执行而不会被终止。 recover 只能在 defer 中调用，并且只在发生 panic 时才会生效。如果在没有 panic 的情况下调用 recover，它将返回 nil。 当 recover 在 defer 中调用时，如果有 panic 发生，它将会返回被传递给 panic 的值，并且程序将继续执行而不会终止。
@@ -47,7 +47,7 @@ recover 也是一个内建函数，用于在 defer 延迟执行的函数中捕�
 <meta name="application-name" content="MeowRain&#39;s Blog">
 <meta name="apple-mobile-web-app-title" content="MeowRain&#39;s Blog"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/posts/8a369fa/" /><link rel="prev" href="http://localhost:1313/posts/a47021b/" /><link rel="next" href="http://localhost:1313/posts/fc29587/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://example.org/posts/8a369fa/" /><link rel="prev" href="https://example.org/posts/a47021b/" /><link rel="next" href="https://example.org/posts/fc29587/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -57,9 +57,9 @@ recover 也是一个内建函数，用于在 defer 延迟执行的函数中捕�
     "inLanguage": "zh-cn",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "http:\/\/localhost:1313\/posts\/8a369fa\/"
+      "@id": "https:\/\/example.org\/posts\/8a369fa\/"
     },"genre": "posts","keywords": "Go, Go错误处理","wordcount":  166 ,
-    "url": "http:\/\/localhost:1313\/posts\/8a369fa\/","datePublished": "2024-05-18T13:03:05+08:00","dateModified": "2024-05-18T13:03:05+08:00","publisher": {
+    "url": "https:\/\/example.org\/posts\/8a369fa\/","datePublished": "2024-05-18T13:03:05+08:00","dateModified": "2024-05-18T13:03:05+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -305,11 +305,11 @@ recover 只能在 defer 中调用，并且只在发生 panic 时才会生效。�
       </div><div class="post-info-license">
             <span>CC</span>
           </div></div><div class="post-info-line">
-        <div class="post-info-md"><span><a href="/posts/8a369fa/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span><span><a href="https://github.com/meowrain/hugo-blog/blob/main/content/posts%5cGo-%e9%94%99%e8%af%af%e5%a4%84%e7%90%86.md?plain=1" title="查看源码"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">查看源码</a></span><span><a href="https://github.com/meowrain/hugo-blog/edit/main/content/posts%5cGo-%e9%94%99%e8%af%af%e5%a4%84%e7%90%86.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span><span><a href="https://github.com/meowrain/hugo-blog/issues/new?title=[BUG]%20Go&#43;%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cGo&#43;%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%7c%0A%7cURL%7chttp://localhost:1313/posts/8a369fa/%7c%0A%7cFilename%7chttps://github.com/meowrain/hugo-blog/blob/main/content/posts%5cGo-%e9%94%99%e8%af%af%e5%a4%84%e7%90%86.md?plain=1%7c" title="报告问题"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">报告问题</a></span></div>
+        <div class="post-info-md"><span><a href="/posts/8a369fa/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span><span><a href="https://github.com/meowrain/hugo-blog/blob/main/content/posts/Go-%e9%94%99%e8%af%af%e5%a4%84%e7%90%86.md?plain=1" title="查看源码"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">查看源码</a></span><span><a href="https://github.com/meowrain/hugo-blog/edit/main/content/posts/Go-%e9%94%99%e8%af%af%e5%a4%84%e7%90%86.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span><span><a href="https://github.com/meowrain/hugo-blog/issues/new?title=[BUG]%20Go&#43;%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cGo&#43;%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%7c%0A%7cURL%7chttps://example.org/posts/8a369fa/%7c%0A%7cFilename%7chttps://github.com/meowrain/hugo-blog/blob/main/content/posts/Go-%e9%94%99%e8%af%af%e5%a4%84%e7%90%86.md?plain=1%7c" title="报告问题"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">报告问题</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/posts/8a369fa/" data-title="Go 错误处理" data-hashtags="Go,Go错误处理"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/8a369fa/" data-hashtag="Go"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/8a369fa/" data-title="Go 错误处理"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://example.org/posts/8a369fa/" data-title="Go 错误处理" data-hashtags="Go,Go错误处理"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://example.org/posts/8a369fa/" data-hashtag="Go"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://example.org/posts/8a369fa/" data-title="Go 错误处理"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
@@ -327,11 +327,18 @@ recover 只能在 defer 中调用，并且只在发生 panic 时才会生效。�
 </article>
 
   <aside class="toc" id="toc-auto" aria-label="目录"></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered"><p>本网站由<img src="https://static.meowrain.cn/i/2024/05/18/o04s8t-3.webp">提供CDN加速/云存储服务</p>由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.126.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.6"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
-        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
-            <span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">
-              <a href="/">meowrain</a></span></div></div>
-  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+  <div class="footer-container"><div class="footer-line powered"><div>本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referra"><img
+            src="https://static.meowrain.cn/i/2024/05/18/o04s8t-3.webp" align="absmiddle" width="59px"
+            height="30px" /></a>
+        <span>提供CDN加速/云存储服务</span>
+      </div>由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer"
+        title="Hugo 0.126.1"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external"
+        title="FixIt v0.3.6"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    </div><div class="footer-line copyright" itemscope
+      itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+      <span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">
+        <a href="/">meowrain</a></span></div></div>
+</footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
         </div></div><a href="https://github.com/meowrain/hugo-blog" title="View source on GitHub"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>

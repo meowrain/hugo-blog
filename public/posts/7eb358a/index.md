@@ -1799,5 +1799,5 @@ OK，按照之前的方式，我们重新再部署一下，然后测试：
 ---
 
 > 作者: meowrain  
-> URL: http://localhost:1313/posts/7eb358a/  
+> URL: https://example.org/posts/7eb358a/  
 

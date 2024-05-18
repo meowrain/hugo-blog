@@ -44,5 +44,5 @@
 ---
 
 > 作者:   
-> URL: http://localhost:1313/about/  
+> URL: https://example.org/about/  
 

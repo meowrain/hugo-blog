@@ -32,5 +32,5 @@ func main() {
 ---
 
 > 作者: meowrain  
-> URL: http://localhost:1313/posts/fc29587/  
+> URL: https://example.org/posts/fc29587/  
 

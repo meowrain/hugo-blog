@@ -1,105 +1,134 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>所有文章 - MeowRain Blog</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://example.org/posts/</link>
     <description>所有文章 | MeowRain Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
-      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 14:28:08 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 15:33:36 &#43;0800</lastBuildDate><atom:link href="https://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>数据库六种范式</title>
+  <link>https://example.org/posts/2c94a50/</link>
+  <pubDate>Sat, 18 May 2024 15:33:36 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>https://example.org/posts/2c94a50/</guid>
+  <description><![CDATA[数据库六种范式 一些基本概念 一些基本概念： 实体： 实体通常指代数据模型中的一个对象，常常对应数据库中的表
+属性： 属性是关系数据库中的一个重要概念，对应于数据表中的列，描述了实体的特征或者特性
+元组： 在关系数据库中，元组指的是数据表中的一行，包含了一组属性值
+分量： 分量是元组中的某个具体的属性值
+候选码和主码： 候选码是可以唯一确定一个元组的属性，主码是从候选码中选出的用来唯一标识一个元组的码
+全码： 包含了所有属性的码，确保了其唯一性
+主属性： 如果一个属性在任何一个候选码中出现过，那么它就是主属性，用来唯一标识一个元组
+非主属性： 非主属性与主属性相反，没有在任何候选码中出现过，不能唯一标识一个元组
+外码： 外码是一个属性(或者属性组)，它不是本表的主码或者候选码，但是却可以关联到其他表的主码，用于建立表与表之间的关联。
+关系模型的形式化定义 R(U,D,DOM,F)
+R: 符号化的元组语义
+U: 一组属性
+D: 属性组U中的属性所来自的域
+DOM: 属性到域的映射
+F: 属性组U上的一组数据依赖
+由于D，DOM与设计关系不大，因此这里把关系模式看作一个三元组R&lt;U,F&gt;
+函数依赖 注： 因为电脑不太方便打出打杠的箭头，所以就用--&gt;表示了
+非平凡函数依赖：关系R(Sno,Cno,Grade)，依赖关系(Sno,Cno)&ndash;&gt;Grade是非平凡函数依赖
+平凡函数依赖：关系R(Sno, Cno)，依赖关系(Sno, Cno)→Sno，(Sno, Cno)→Cno都是平凡函数依赖
+完全函数依赖：关系R(Sno,Cno,Grade)，依赖关系(Sno,Cno)-&gt;Grade，但是Sno--&gt;Grade且Cno--&gt;Grade，因此这个依赖关系是完全函数依赖
+$(Sno,Cno) \overset{F}{\longrightarrow} Grade$
+部分函数依赖:关系R(Sno,Sname,Ssex,Sclass,Sage),依赖关系中我们可以用Sno,Sname推出Ssex，也就是(Sno,Sname)-&gt;Ssex，但是Sno-&gt;Ssex，这样的话就是部分函数依赖了。
+传递函数依赖：图里面写的很明白，这里就不多赘述
+函数依赖和属性的关系 设R(U)是属性集U上的关系模式，X、Y是U的子集。
+如果X和Y之间是一对一（1:1）关系，如学校和校长，则存在函数依赖X→Y和Y→X。
+如果X和Y之间是一对多（1:n）关系，如年龄和姓名，则存在函数依赖Y→X。
+如果X和Y之间是多对多（m:n）关系，如学生和课程，则X和Y之间不存在函数依赖。
+范式 第一范式 1NF 属性不可分
+第二范式 2NF https://www.geeksforgeeks.org/second-normal-form-2nf/
+第二范式要求一个表中的每个非主属性都完全函数依赖于候选码，即表中的每个非主属性都必须完全依赖于整个候选码，而不是部分依赖于候选码的某一部分。
+我们来看这个表，很明显这个表不符合第二范式，其中STUD_NO和COURSE_NO是候选码(主属性)，而COURSE_FEE是非主属性，但是它并不依赖STUD_NO，而是只依赖COURSE_NO，因此是部分依赖于整个候选码。
+由此可以得出，这个表不符合第二范式
+第三范式 3NF BCNF ]]></description>
+</item>
+<item>
+  <title>Openwrt开机自启frpc</title>
+  <link>https://example.org/posts/e31d395/</link>
+  <pubDate>Sat, 18 May 2024 15:25:10 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>https://example.org/posts/e31d395/</guid>
+  <description><![CDATA[https://openwrt.org/docs/guide-developer/procd-init-script-example
+cd /etc/init.d vim frpc
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 #!/bin/sh /etc/rc.common START=99 STOP=90 SERVICE=frpc USE_PROCD=1 PROC=&#34;/usr/bin/frpc -c /root/frpc/frpc.toml&#34; start_service(){ procd_open_instance procd_set_param command $PROC procd_set_param respawn procd_close_instance } service_triggers() { procd_add_reload_trigger &#34;rpcd&#34; } /etc/init.d/frp enable &amp;&amp; echo on]]></description>
+</item>
+<item>
   <title>SpringMVC项目搭建</title>
-  <link>http://localhost:1313/posts/731590c/</link>
+  <link>https://example.org/posts/731590c/</link>
   <pubDate>Sat, 18 May 2024 14:28:08 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/731590c/</guid>
-  <description><![CDATA[Spring MVC项目创建把没用的文件删掉
+  <guid>https://example.org/posts/731590c/</guid>
+  <description><![CDATA[Spring MVC项目创建 把没用的文件删掉
 添加依赖
 1 2 3 4 5 6 &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt; &lt;version&gt;6.1.3&lt;/version&gt; &lt;/dependency&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 &lt;?]]></description>
 </item>
 <item>
   <title>C&#43;&#43; Const与function</title>
-  <link>http://localhost:1313/posts/2a356ef/</link>
+  <link>https://example.org/posts/2a356ef/</link>
   <pubDate>Sat, 18 May 2024 14:27:09 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/2a356ef/</guid>
-  <description><![CDATA[const与function在c++中，const在function中有不一样的使用
+  <guid>https://example.org/posts/2a356ef/</guid>
+  <description><![CDATA[const与function 在c++中，const在function中有不一样的使用
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 #include &lt;iostream&gt; #include &lt;string&gt; class Example { public: Example(const std::string &amp;name) : m_Name(name) {} const std::string&amp; GetName() const {return m_Name;}; private: std::string m_Name; }; int main() { Example example(&#34;John&#34;); const std::string&amp; name = example.GetName(); std::cout &lt;&lt; name &lt;&lt; std::endl;//输出 “John&#34; // name = &#34;Alice&#34;; //wrong } 这个函数的返回值是一个指向常量字符串的引用。const修饰的是返回值的类型，表示返回的字符串是一个常量，不能被修改。
 函数签名中的第二个const修饰的是成员函数本身，表示这个函数是一个const成员函数，即在该函数内部不能修改类的成员变量。
 因此，这个函数返回一个指向常量字符串的引用，并且在该函数内部不修改类的成员变量。]]></description>
 </item>
 <item>
   <title>C&#43;&#43;STL</title>
-  <link>http://localhost:1313/posts/4b6605b/</link>
+  <link>https://example.org/posts/4b6605b/</link>
   <pubDate>Sat, 18 May 2024 14:26:09 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/4b6605b/</guid>
-  <description><![CDATA[C++ STLvectorvector构造器1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 #include &lt;vector&gt; #include &lt;iostream&gt; /* vector&lt;T&gt; v; // 采用模版类实现，默认构造函数 vector&lt;T&gt; v(T* v1.begin(), T* v1.end()); // 将v1[begin(), end())区间中的元素拷贝给本身 vector&lt;T&gt; v(int n, T elem); // 将n个elem拷贝给本身 vector&lt;T&gt; v(const vector&lt;T&gt; v1); // 拷贝构造函数 */ int main(void) { std::vector&lt;int&gt; v; // 默认构造函数 for(int i = 0;i&lt;10;i++) { v.]]></description>
+  <guid>https://example.org/posts/4b6605b/</guid>
+  <description><![CDATA[C++ STL vector vector构造器 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 #include &lt;vector&gt; #include &lt;iostream&gt; /* vector&lt;T&gt; v; // 采用模版类实现，默认构造函数 vector&lt;T&gt; v(T* v1.begin(), T* v1.end()); // 将v1[begin(), end())区间中的元素拷贝给本身 vector&lt;T&gt; v(int n, T elem); // 将n个elem拷贝给本身 vector&lt;T&gt; v(const vector&lt;T&gt; v1); // 拷贝构造函数 */ int main(void) { std::vector&lt;int&gt; v; // 默认构造函数 for(int i = 0;i&lt;10;i++) { v.]]></description>
 </item>
 <item>
   <title>Mysql基础_韩顺平老师转载</title>
-  <link>http://localhost:1313/posts/f0ce569/</link>
+  <link>https://example.org/posts/f0ce569/</link>
   <pubDate>Sat, 18 May 2024 14:23:54 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/f0ce569/</guid>
-  <description><![CDATA[第24章 零基础学MySQL 解决之道 文件、数据库 MySQL 数据库的安装和配置 使用命令行窗口连接MYSQL 数据库 操作示意图 数据库三层结构 数据在数据库中的存储方式 SQL 语句分类 创建数据库 查看、删除数据库 备份恢复数据库 备份恢复数据库的表 创建表 Mysql 常用数据类型(列类型) 数值型(整数)的基本使用 定义一个无符号的整数 数值型(bit)的使用 数值型(小数)的基本使用 字符串的基本使用 字符串使用细节 日期类型的基本使用 创建表练习 修改表-基本介绍 修改表-课堂练习 数据库C[create]R[read]U[update]D[delete]语句 Insert 语句 使用INSERT 语句向表中插入数据。 细节说明 update 语句 使用 update 语句修改表中数据 基本使用 使用细节 delete 语句 使用delete 语句删除表中数据 使用细节 select 语句 基本语法 注意事项(创建测试表学生表) 练习 使用表达式对查询的列进行运算 在select 语句中可使用as 语句 练习 在where 子句中经常使用的运算符 使用where 子句，进行过滤查询 使用order by 子句排序查询结果 合计/统计函数 count sum avg max/min 使用group by 子句对列进行分组 使用having 子句对分组后的结果进行过滤 字符串相关函数 数学相关函数 时间日期相关函数 加密和系统函数 流程控制函数 mysql 表查询&ndash;加强 介绍 分页查询 使用分组函数和分组子句 数据分组的总结 mysql 多表查询 多表查询练习 自连接 mysql 表子查询 什么是子查询 单行子查询 多行子查询 子查询当做临时表使用 在多行子查询中使用 all 操作符 在多行子查询中使用 any 操作符 多列子查询 在from 子句中使用子查询 表复制 自我复制数据(蠕虫复制) 合并查询 介绍 mysql 表外连接 外连接 mysql 约束 基本介绍 primary key(主键) not null(非空) unique(唯一) foreign key(外键) check 商店售货系统表设计案例 自增长 自增长基本介绍 自增长使用细节 mysql 索引 索引快速入门 索引的原理 索引的类 索引使用 哪些列上适合使用索引 mysql 事务 什么是事务 事务和锁 回退事务 提交事务 事务细节讨论 mysql 事务隔离级别 事务隔离级别介绍 查看事务隔离级别 事务隔离级别 mysql 的事务隔离级&ndash;案例 设置事务隔离级别 mysql 事务ACID 事务的acid 特性 mysql 表类型和存储引擎 基本介绍 主要的存储引擎/表类型特点 细节说明 三种存储引擎表使用案例 如何选择表的存储引擎 修改存储引擎 视图(view) 看一个需求 基本概念 视图的基本使用 视图细节讨论 视图最佳实践 视图课堂练习 Mysql 管理 Mysql 用户 创建用户 删除用户 用户修改密码 mysql 中的权限 给用户授权 回收用户授权 权限生效指令 课堂练习题 细节说明 本章作业 第24章 零基础学MySQL解决之道文件、数据库为了解决上述问题,使用更加利于管理数据的东东-数据库，它能更有效的管理数据。]]></description>
+  <guid>https://example.org/posts/f0ce569/</guid>
+  <description><![CDATA[第24章 零基础学MySQL 解决之道 文件、数据库 MySQL 数据库的安装和配置 使用命令行窗口连接MYSQL 数据库 操作示意图 数据库三层结构 数据在数据库中的存储方式 SQL 语句分类 创建数据库 查看、删除数据库 备份恢复数据库 备份恢复数据库的表 创建表 Mysql 常用数据类型(列类型) 数值型(整数)的基本使用 定义一个无符号的整数 数值型(bit)的使用 数值型(小数)的基本使用 字符串的基本使用 字符串使用细节 日期类型的基本使用 创建表练习 修改表-基本介绍 修改表-课堂练习 数据库C[create]R[read]U[update]D[delete]语句 Insert 语句 使用INSERT 语句向表中插入数据。 细节说明 update 语句 使用 update 语句修改表中数据 基本使用 使用细节 delete 语句 使用delete 语句删除表中数据 使用细节 select 语句 基本语法 注意事项(创建测试表学生表) 练习 使用表达式对查询的列进行运算 在select 语句中可使用as 语句 练习 在where 子句中经常使用的运算符 使用where 子句，进行过滤查询 使用order by 子句排序查询结果 合计/统计函数 count sum avg max/min 使用group by 子句对列进行分组 使用having 子句对分组后的结果进行过滤 字符串相关函数 数学相关函数 时间日期相关函数 加密和系统函数 流程控制函数 mysql 表查询&ndash;加强 介绍 分页查询 使用分组函数和分组子句 数据分组的总结 mysql 多表查询 多表查询练习 自连接 mysql 表子查询 什么是子查询 单行子查询 多行子查询 子查询当做临时表使用 在多行子查询中使用 all 操作符 在多行子查询中使用 any 操作符 多列子查询 在from 子句中使用子查询 表复制 自我复制数据(蠕虫复制) 合并查询 介绍 mysql 表外连接 外连接 mysql 约束 基本介绍 primary key(主键) not null(非空) unique(唯一) foreign key(外键) check 商店售货系统表设计案例 自增长 自增长基本介绍 自增长使用细节 mysql 索引 索引快速入门 索引的原理 索引的类 索引使用 哪些列上适合使用索引 mysql 事务 什么是事务 事务和锁 回退事务 提交事务 事务细节讨论 mysql 事务隔离级别 事务隔离级别介绍 查看事务隔离级别 事务隔离级别 mysql 的事务隔离级&ndash;案例 设置事务隔离级别 mysql 事务ACID 事务的acid 特性 mysql 表类型和存储引擎 基本介绍 主要的存储引擎/表类型特点 细节说明 三种存储引擎表使用案例 如何选择表的存储引擎 修改存储引擎 视图(view) 看一个需求 基本概念 视图的基本使用 视图细节讨论 视图最佳实践 视图课堂练习 Mysql 管理 Mysql 用户 创建用户 删除用户 用户修改密码 mysql 中的权限 给用户授权 回收用户授权 权限生效指令 课堂练习题 细节说明 本章作业 第24章 零基础学MySQL 解决之道 文件、数据库 为了解决上述问题,使用更加利于管理数据的东东-数据库，它能更有效的管理数据。]]></description>
 </item>
 <item>
   <title>JDBC_韩顺平老师转载</title>
-  <link>http://localhost:1313/posts/2585519/</link>
+  <link>https://example.org/posts/2585519/</link>
   <pubDate>Sat, 18 May 2024 14:22:32 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/2585519/</guid>
-  <description><![CDATA[第25章 JDBC 和数据库连接池 JDBC 概述 基本介绍 模拟JDBC JDBC 带来的好处 JDBC 快速入门 JDBC 程序编写步骤 JDBC 第一个程序 获取数据库连接5种方式 方式1 方式2 方式3 方式4 方式5 ResultSet[结果集] 基本介绍 应用实例 Statement 基本介绍 PreparedStatement 基本介绍 预处理好处 应用案例 JDBC 的相关 API 小结 封装JDBCUtils 说明 代码实现 事务 基本介绍 应用实例 批处理 基本介绍 数据库连接池 5k 次连接数据库问题 传统获取Connection 问题分析 数据库连接池种类 C3P0 应用实例 Druid(德鲁伊)应用实例 将JDBCUtils 工具类改成Druid(德鲁伊)实现 Apache—DBUtils 先分析一个问题 自定义方法解决 基本介绍 应用实例 表 和 JavaBean 的类型映射关系 DAO 和增删改查通用方法-BasicDao 先分析一个问题 基本说明 BasicDAO 应用实例 第25章 JDBC 和数据库连接池JDBC 概述基本介绍JDBC为访问不同的数据库提供了统一的接口，为使用者屏蔽了细节问题。]]></description>
+  <guid>https://example.org/posts/2585519/</guid>
+  <description><![CDATA[第25章 JDBC 和数据库连接池 JDBC 概述 基本介绍 模拟JDBC JDBC 带来的好处 JDBC 快速入门 JDBC 程序编写步骤 JDBC 第一个程序 获取数据库连接5种方式 方式1 方式2 方式3 方式4 方式5 ResultSet[结果集] 基本介绍 应用实例 Statement 基本介绍 PreparedStatement 基本介绍 预处理好处 应用案例 JDBC 的相关 API 小结 封装JDBCUtils 说明 代码实现 事务 基本介绍 应用实例 批处理 基本介绍 数据库连接池 5k 次连接数据库问题 传统获取Connection 问题分析 数据库连接池种类 C3P0 应用实例 Druid(德鲁伊)应用实例 将JDBCUtils 工具类改成Druid(德鲁伊)实现 Apache—DBUtils 先分析一个问题 自定义方法解决 基本介绍 应用实例 表 和 JavaBean 的类型映射关系 DAO 和增删改查通用方法-BasicDao 先分析一个问题 基本说明 BasicDAO 应用实例 第25章 JDBC 和数据库连接池 JDBC 概述 基本介绍 JDBC为访问不同的数据库提供了统一的接口，为使用者屏蔽了细节问题。]]></description>
 </item>
 <item>
   <title>React Hooks</title>
-  <link>http://localhost:1313/posts/33f6951/</link>
+  <link>https://example.org/posts/33f6951/</link>
   <pubDate>Sat, 18 May 2024 14:20:57 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/33f6951/</guid>
-  <description><![CDATA[React Hooks手动创建react项目仓库地址 https://github.com/meowrain/Manually-React-Project
+  <guid>https://example.org/posts/33f6951/</guid>
+  <description><![CDATA[React Hooks 手动创建react项目 仓库地址 https://github.com/meowrain/Manually-React-Project
 https://dev.to/ivadyhabimana/how-to-create-a-react-app-without-using-create-react-app-a-step-by-step-guide-30nl
 1 2 3 4 5 6 npm init -y npm install react react-dom npm install --save-dev @babel/core babel-loader @babel/cli @babel/preset-env @babel/preset-react npm install --save-dev webpack webpack-cli webpack-dev-server npm install --save-dev html-webpack-plugin 创建src目录，index.js，public目录和index.html,.babelrc,webpack.config.js
 1 2 3 4 5 6 7 8 9 10 11 12 index.html &lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;root&#34;&gt;&lt;/div&gt; &lt;/body&gt; &lt;/html&gt; 1 2 3 webpack：使我们能够在项目中使用 webpack 的实际包 webpack-cli：允许我们在命令行中运行 webpack 命令 webpack-dev-server：Webpack 服务器将在开发环境中充当我们的服务器。如果您熟悉更高级别的开发服务器 live-server 或 nodemon，那么它的工作方式是相同的。 1 2 3 4 5 6 7 8 // index.]]></description>
 </item>
 <item>
   <title>Vue笔记13-Vue transition组件</title>
-  <link>http://localhost:1313/posts/d2d05db/</link>
+  <link>https://example.org/posts/d2d05db/</link>
   <pubDate>Sat, 18 May 2024 14:18:42 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/d2d05db/</guid>
+  <guid>https://example.org/posts/d2d05db/</guid>
   <description><![CDATA[官方文档： https://cn.vuejs.org/guide/built-ins/transition.html
 使用v-if处理盒子显示和消失 🤓 看上去很生硬，不是吗？我们来用transition组件处理一下
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 &lt;template&gt; &lt;div&gt; &lt;el-button color=&#34;#626aef&#34; @click=&#34;flag = !flag&#34;&gt; 切换组件&lt;/el-button&gt; &lt;Transition name=&#34;fade&#34;&gt; &lt;div class=&#34;box&#34; v-if=&#34;flag&#34;&gt;box&lt;/div&gt; &lt;/Transition&gt; &lt;/div&gt; &lt;/template&gt; &lt;script setup lang=&#34;ts&#34;&gt; import { ref, Transition } from &#39;vue&#39; let flag = ref&lt;boolean&gt;(true) &lt;/script&gt; &lt;style scoped&gt; .]]></description>
 </item>
 <item>
   <title>Vue笔记12-Vue插槽使用</title>
-  <link>http://localhost:1313/posts/56af5d5/</link>
+  <link>https://example.org/posts/56af5d5/</link>
   <pubDate>Sat, 18 May 2024 14:17:12 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/56af5d5/</guid>
-  <description><![CDATA[简单使用TestView.vue
+  <guid>https://example.org/posts/56af5d5/</guid>
+  <description><![CDATA[简单使用 TestView.vue
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 &lt;script setup lang=&#34;ts&#34;&gt; &lt;/script&gt; &lt;template&gt; &lt;div class=&#34;parent&#34;&gt; &lt;slot&gt; &lt;/slot&gt; &lt;/div&gt; &lt;/template&gt; &lt;style scoped&gt; .parent { width: 100px; height: 100px; background-color: aquamarine; } &lt;/style&gt; HomeView.vue
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 &lt;script setup lang=&#34;ts&#34;&gt; import TestView from &#39;../views/TestView.vue&#39; &lt;/script&gt; &lt;template&gt; &lt;div&gt; &lt;TestView&gt; &lt;template v-slot&gt; &lt;p&gt;HelloWOrld&lt;/p&gt; &lt;/template&gt; &lt;/TestView&gt; &lt;/div&gt; &lt;/template&gt; &lt;style scoped&gt; &lt;/style&gt; 具名插槽TestView.]]></description>
-</item>
-<item>
-  <title>Vue笔记11-Vue keep-alive组件使用</title>
-  <link>http://localhost:1313/posts/0ad7053/</link>
-  <pubDate>Sat, 18 May 2024 14:16:44 &#43;0800</pubDate>
-  <author>meowrain</author>
-  <guid>http://localhost:1313/posts/0ad7053/</guid>
-  <description><![CDATA[keep-alive组件作用我们的要组件能在被“切走”的时候保留它们的状态。要解决这个问题，我们可以用 内置组件将这些动态组件包装起来
-1 2 3 4 &lt;!-- 非活跃的组件将会被缓存！ --&gt; &lt;KeepAlive&gt; &lt;component :is=&#34;activeComponent&#34; /&gt; &lt;/KeepAlive&gt; 举例：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 HomeView.vue &lt;template&gt; &lt;div&gt; &lt;el-button color=&#34;#626aef&#34; @click=&#34;flag = !flag&#34;&gt; 切换组件&lt;/el-button&gt; &lt;SonViewOne v-if=&#34;flag&#34;/&gt; &lt;SonViewTwo v-else/&gt; &lt;/div&gt; &lt;/template&gt; &lt;script setup lang=&#34;ts&#34;&gt; import {ref} from &#39;vue&#39; import SonViewOne from &#39;./SonViewOne.vue&#39;; import SonViewTwo from &#39;./SonViewTwo.vue&#39;; let flag = ref&lt;boolean&gt;(false ); &lt;/script&gt; &lt;style scoped&gt;&lt;/style&gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 SonViewOne.]]></description>
-</item>
-<item>
-  <title>Vue笔记10-Vue组件值传递</title>
-  <link>http://localhost:1313/posts/7729ec4/</link>
-  <pubDate>Sat, 18 May 2024 14:16:18 &#43;0800</pubDate>
-  <author>meowrain</author>
-  <guid>http://localhost:1313/posts/7729ec4/</guid>
-  <description><![CDATA[父子组件传值父组件向子组件传值defineProps
-父组件
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 &lt;script setup lang=&#34;ts&#34;&gt; import { onMounted, ref } from &#39;vue&#39; import TestView from &#39;../views/TestView.vue&#39; let imgUrl = ref&lt;string&gt;() onMounted(async ()=&gt;{ const response = await fetch(&#39;https://api.waifu.pics/sfw/waifu&#39;) const json = await response.json() imgUrl.value = json.url; }) &lt;/script&gt; &lt;template&gt; &lt;div&gt; &lt;TestView :url=&#34;imgUrl&#34;/&gt; &lt;/div&gt; &lt;/template&gt; &lt;style&gt;&lt;/style&gt; 子组件
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 &lt;script setup lang=&#34;ts&#34;&gt; import { defineProps, toRef, watch, watchEffect } from &#39;vue&#39;; const props = defineProps({ url:String }) watch(()=&gt;props.]]></description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 &lt;script setup lang=&#34;ts&#34;&gt; import TestView from &#39;../views/TestView.vue&#39; &lt;/script&gt; &lt;template&gt; &lt;div&gt; &lt;TestView&gt; &lt;template v-slot&gt; &lt;p&gt;HelloWOrld&lt;/p&gt; &lt;/template&gt; &lt;/TestView&gt; &lt;/div&gt; &lt;/template&gt; &lt;style scoped&gt; &lt;/style&gt; 具名插槽 TestView.]]></description>
 </item>
 </channel>
 </rss>

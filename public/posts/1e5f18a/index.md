@@ -157,5 +157,5 @@ func main() {
 ---
 
 > 作者:   
-> URL: http://localhost:1313/posts/1e5f18a/  
+> URL: https://example.org/posts/1e5f18a/  
 

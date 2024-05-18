@@ -1,24 +1,24 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Mysql - 标签 - MeowRain Blog</title>
-    <link>http://localhost:1313/tags/mysql/</link>
+    <link>https://example.org/tags/mysql/</link>
     <description>Mysql - 标签 | MeowRain Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
-      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 14:23:54 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/mysql/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 14:23:54 &#43;0800</lastBuildDate><atom:link href="https://example.org/tags/mysql/" rel="self" type="application/rss+xml" /><item>
   <title>Mysql基础_韩顺平老师转载</title>
-  <link>http://localhost:1313/posts/f0ce569/</link>
+  <link>https://example.org/posts/f0ce569/</link>
   <pubDate>Sat, 18 May 2024 14:23:54 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/f0ce569/</guid>
-  <description><![CDATA[第24章 零基础学MySQL 解决之道 文件、数据库 MySQL 数据库的安装和配置 使用命令行窗口连接MYSQL 数据库 操作示意图 数据库三层结构 数据在数据库中的存储方式 SQL 语句分类 创建数据库 查看、删除数据库 备份恢复数据库 备份恢复数据库的表 创建表 Mysql 常用数据类型(列类型) 数值型(整数)的基本使用 定义一个无符号的整数 数值型(bit)的使用 数值型(小数)的基本使用 字符串的基本使用 字符串使用细节 日期类型的基本使用 创建表练习 修改表-基本介绍 修改表-课堂练习 数据库C[create]R[read]U[update]D[delete]语句 Insert 语句 使用INSERT 语句向表中插入数据。 细节说明 update 语句 使用 update 语句修改表中数据 基本使用 使用细节 delete 语句 使用delete 语句删除表中数据 使用细节 select 语句 基本语法 注意事项(创建测试表学生表) 练习 使用表达式对查询的列进行运算 在select 语句中可使用as 语句 练习 在where 子句中经常使用的运算符 使用where 子句，进行过滤查询 使用order by 子句排序查询结果 合计/统计函数 count sum avg max/min 使用group by 子句对列进行分组 使用having 子句对分组后的结果进行过滤 字符串相关函数 数学相关函数 时间日期相关函数 加密和系统函数 流程控制函数 mysql 表查询&ndash;加强 介绍 分页查询 使用分组函数和分组子句 数据分组的总结 mysql 多表查询 多表查询练习 自连接 mysql 表子查询 什么是子查询 单行子查询 多行子查询 子查询当做临时表使用 在多行子查询中使用 all 操作符 在多行子查询中使用 any 操作符 多列子查询 在from 子句中使用子查询 表复制 自我复制数据(蠕虫复制) 合并查询 介绍 mysql 表外连接 外连接 mysql 约束 基本介绍 primary key(主键) not null(非空) unique(唯一) foreign key(外键) check 商店售货系统表设计案例 自增长 自增长基本介绍 自增长使用细节 mysql 索引 索引快速入门 索引的原理 索引的类 索引使用 哪些列上适合使用索引 mysql 事务 什么是事务 事务和锁 回退事务 提交事务 事务细节讨论 mysql 事务隔离级别 事务隔离级别介绍 查看事务隔离级别 事务隔离级别 mysql 的事务隔离级&ndash;案例 设置事务隔离级别 mysql 事务ACID 事务的acid 特性 mysql 表类型和存储引擎 基本介绍 主要的存储引擎/表类型特点 细节说明 三种存储引擎表使用案例 如何选择表的存储引擎 修改存储引擎 视图(view) 看一个需求 基本概念 视图的基本使用 视图细节讨论 视图最佳实践 视图课堂练习 Mysql 管理 Mysql 用户 创建用户 删除用户 用户修改密码 mysql 中的权限 给用户授权 回收用户授权 权限生效指令 课堂练习题 细节说明 本章作业 第24章 零基础学MySQL解决之道文件、数据库为了解决上述问题,使用更加利于管理数据的东东-数据库，它能更有效的管理数据。]]></description>
+  <guid>https://example.org/posts/f0ce569/</guid>
+  <description><![CDATA[第24章 零基础学MySQL 解决之道 文件、数据库 MySQL 数据库的安装和配置 使用命令行窗口连接MYSQL 数据库 操作示意图 数据库三层结构 数据在数据库中的存储方式 SQL 语句分类 创建数据库 查看、删除数据库 备份恢复数据库 备份恢复数据库的表 创建表 Mysql 常用数据类型(列类型) 数值型(整数)的基本使用 定义一个无符号的整数 数值型(bit)的使用 数值型(小数)的基本使用 字符串的基本使用 字符串使用细节 日期类型的基本使用 创建表练习 修改表-基本介绍 修改表-课堂练习 数据库C[create]R[read]U[update]D[delete]语句 Insert 语句 使用INSERT 语句向表中插入数据。 细节说明 update 语句 使用 update 语句修改表中数据 基本使用 使用细节 delete 语句 使用delete 语句删除表中数据 使用细节 select 语句 基本语法 注意事项(创建测试表学生表) 练习 使用表达式对查询的列进行运算 在select 语句中可使用as 语句 练习 在where 子句中经常使用的运算符 使用where 子句，进行过滤查询 使用order by 子句排序查询结果 合计/统计函数 count sum avg max/min 使用group by 子句对列进行分组 使用having 子句对分组后的结果进行过滤 字符串相关函数 数学相关函数 时间日期相关函数 加密和系统函数 流程控制函数 mysql 表查询&ndash;加强 介绍 分页查询 使用分组函数和分组子句 数据分组的总结 mysql 多表查询 多表查询练习 自连接 mysql 表子查询 什么是子查询 单行子查询 多行子查询 子查询当做临时表使用 在多行子查询中使用 all 操作符 在多行子查询中使用 any 操作符 多列子查询 在from 子句中使用子查询 表复制 自我复制数据(蠕虫复制) 合并查询 介绍 mysql 表外连接 外连接 mysql 约束 基本介绍 primary key(主键) not null(非空) unique(唯一) foreign key(外键) check 商店售货系统表设计案例 自增长 自增长基本介绍 自增长使用细节 mysql 索引 索引快速入门 索引的原理 索引的类 索引使用 哪些列上适合使用索引 mysql 事务 什么是事务 事务和锁 回退事务 提交事务 事务细节讨论 mysql 事务隔离级别 事务隔离级别介绍 查看事务隔离级别 事务隔离级别 mysql 的事务隔离级&ndash;案例 设置事务隔离级别 mysql 事务ACID 事务的acid 特性 mysql 表类型和存储引擎 基本介绍 主要的存储引擎/表类型特点 细节说明 三种存储引擎表使用案例 如何选择表的存储引擎 修改存储引擎 视图(view) 看一个需求 基本概念 视图的基本使用 视图细节讨论 视图最佳实践 视图课堂练习 Mysql 管理 Mysql 用户 创建用户 删除用户 用户修改密码 mysql 中的权限 给用户授权 回收用户授权 权限生效指令 课堂练习题 细节说明 本章作业 第24章 零基础学MySQL 解决之道 文件、数据库 为了解决上述问题,使用更加利于管理数据的东东-数据库，它能更有效的管理数据。]]></description>
 </item>
 <item>
   <title>Docker安装mysql</title>
-  <link>http://localhost:1313/posts/e3c5896/</link>
+  <link>https://example.org/posts/e3c5896/</link>
   <pubDate>Wed, 15 May 2024 19:15:16 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>http://localhost:1313/posts/e3c5896/</guid>
-  <description><![CDATA[Docker安装mysql1 2 3 4 $ docker pull mysql:latest $ cd ~ $ mkdir mysql $ cd mysql 1 $ docker run -p 3306:3306 --name mysql -v $PWD/conf/my.cnf:/etc/mysql/my.cnf -v $PWD/logs:/logs -v $PWD/data:/mysql_data -e MYSQL_ROOT_PASSWORD=123456 -d mysql 连接mysqlhttps://docs.fedoraproject.org/en-US/quick-docs/installing-mysql-mariadb/ 可以参考一下官方文档
+  <guid>https://example.org/posts/e3c5896/</guid>
+  <description><![CDATA[Docker安装mysql 1 2 3 4 $ docker pull mysql:latest $ cd ~ $ mkdir mysql $ cd mysql 1 $ docker run -p 3306:3306 --name mysql -v $PWD/conf/my.cnf:/etc/mysql/my.cnf -v $PWD/logs:/logs -v $PWD/data:/mysql_data -e MYSQL_ROOT_PASSWORD=123456 -d mysql 连接mysql https://docs.fedoraproject.org/en-US/quick-docs/installing-mysql-mariadb/ 可以参考一下官方文档
 1 $ sudo dnf install community-mysql-server 1 $ mysql -h 127.0.0.1 -P 3306 -u root -p123456 ]]></description>
 </item>
 </channel>
