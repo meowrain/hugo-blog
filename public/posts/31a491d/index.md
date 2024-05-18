@@ -2045,5 +2045,5 @@ Gin框架允许开发者在处理请求的过程中，加入用户自己的钩�
 ---
 
 > 作者: meowrain  
-> URL: https://example.org/posts/31a491d/  
+> URL: http://localhost:1313/posts/31a491d/  
 

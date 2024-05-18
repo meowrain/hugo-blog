@@ -25,5 +25,5 @@ systemctl restart docker.service
 ---
 
 > 作者: meowrain  
-> URL: https://example.org/posts/7c3ddcd/  
+> URL: http://localhost:1313/posts/7c3ddcd/  
 

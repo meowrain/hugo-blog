@@ -1,23 +1,23 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Java - 标签 - MeowRain Blog</title>
-    <link>https://example.org/tags/java/</link>
+    <link>http://localhost:1313/tags/java/</link>
     <description>Java - 标签 | MeowRain Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
-      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 14:22:32 &#43;0800</lastBuildDate><atom:link href="https://example.org/tags/java/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 14:22:32 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/java/" rel="self" type="application/rss+xml" /><item>
   <title>JDBC_韩顺平老师转载</title>
-  <link>https://example.org/posts/2585519/</link>
+  <link>http://localhost:1313/posts/2585519/</link>
   <pubDate>Sat, 18 May 2024 14:22:32 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>https://example.org/posts/2585519/</guid>
+  <guid>http://localhost:1313/posts/2585519/</guid>
   <description><![CDATA[第25章 JDBC 和数据库连接池 JDBC 概述 基本介绍 模拟JDBC JDBC 带来的好处 JDBC 快速入门 JDBC 程序编写步骤 JDBC 第一个程序 获取数据库连接5种方式 方式1 方式2 方式3 方式4 方式5 ResultSet[结果集] 基本介绍 应用实例 Statement 基本介绍 PreparedStatement 基本介绍 预处理好处 应用案例 JDBC 的相关 API 小结 封装JDBCUtils 说明 代码实现 事务 基本介绍 应用实例 批处理 基本介绍 数据库连接池 5k 次连接数据库问题 传统获取Connection 问题分析 数据库连接池种类 C3P0 应用实例 Druid(德鲁伊)应用实例 将JDBCUtils 工具类改成Druid(德鲁伊)实现 Apache—DBUtils 先分析一个问题 自定义方法解决 基本介绍 应用实例 表 和 JavaBean 的类型映射关系 DAO 和增删改查通用方法-BasicDao 先分析一个问题 基本说明 BasicDAO 应用实例 第25章 JDBC 和数据库连接池JDBC 概述基本介绍JDBC为访问不同的数据库提供了统一的接口，为使用者屏蔽了细节问题。]]></description>
 </item>
 <item>
   <title>Java面向对象基础(高级)</title>
-  <link>https://example.org/posts/0112cbb/</link>
+  <link>http://localhost:1313/posts/0112cbb/</link>
   <pubDate>Sat, 18 May 2024 13:09:43 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>https://example.org/posts/0112cbb/</guid>
+  <guid>http://localhost:1313/posts/0112cbb/</guid>
   <description><![CDATA[Java面向对象(高级)面型对象高级 面型对象中级 面型对象初级
 类变量/类方法类变量/类方法-博客园 类变量快速入门介绍类变量（又叫静态变量）是该类的所有对象共享的变量，任何一个该类的对象去访问它时，取到的都是相同的值，同样任何一个该类的对象去修改它时，修改的也是同一个变量。
 定义类变量：访问修饰符 static 数据类型 变量名; 静态变量是类加载的时候，就创建了,所以我们没有创建对象实例 定义一个变量 count ,是一个类变量(静态变量) static 静态 该变量最大的特点就是会被Child 类的所有的对象实例共享
@@ -25,10 +25,10 @@
 </item>
 <item>
   <title>Java面向对象基础(中级)</title>
-  <link>https://example.org/posts/f4f8ed5/</link>
+  <link>http://localhost:1313/posts/f4f8ed5/</link>
   <pubDate>Sat, 18 May 2024 13:09:20 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>https://example.org/posts/f4f8ed5/</guid>
+  <guid>http://localhost:1313/posts/f4f8ed5/</guid>
   <description><![CDATA[Java面向对象基础（中级）Consolas, &lsquo;Courier New&rsquo;, monospace
 包包的三大作用1.区分相同名字的类
 2.当类很多的时候，可以很好地管理类
@@ -45,10 +45,10 @@ com.xxxx.utils 工具模块
 </item>
 <item>
   <title>Java面向对象基础(初级)</title>
-  <link>https://example.org/posts/61c8cb0/</link>
+  <link>http://localhost:1313/posts/61c8cb0/</link>
   <pubDate>Sat, 18 May 2024 13:08:20 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>https://example.org/posts/61c8cb0/</guid>
+  <guid>http://localhost:1313/posts/61c8cb0/</guid>
   <description><![CDATA[Java面向对象基础(初级)对面向对象和面向过程的理解
 谈谈你对面向过程和面向对象的理解_智十七°的博客-CSDN博客_面向对象和面向过程的理解
 面向对象的三大特征封装 (Encapsulation) 继承 (Inheritance) 多态 (Polymorphism)

@@ -59,5 +59,5 @@ func main() {
 ---
 
 > 作者: meowrain  
-> URL: https://example.org/posts/8a369fa/  
+> URL: http://localhost:1313/posts/8a369fa/  
 

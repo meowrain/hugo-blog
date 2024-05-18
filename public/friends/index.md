@@ -30,5 +30,5 @@
 ---
 
 > 作者:   
-> URL: https://example.org/friends/  
+> URL: http://localhost:1313/friends/  
 

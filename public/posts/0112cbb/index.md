@@ -955,5 +955,5 @@ public class MainClass {
 ---
 
 > 作者: meowrain  
-> URL: https://example.org/posts/0112cbb/  
+> URL: http://localhost:1313/posts/0112cbb/  
 

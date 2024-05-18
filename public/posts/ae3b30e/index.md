@@ -1451,5 +1451,5 @@ int main() {
 ---
 
 > 作者: meowrain  
-> URL: https://example.org/posts/ae3b30e/  
+> URL: http://localhost:1313/posts/ae3b30e/  
 

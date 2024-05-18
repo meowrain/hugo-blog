@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>状态码 - 标签 - MeowRain Blog</title>
-    <link>https://example.org/tags/%E7%8A%B6%E6%80%81%E7%A0%81/</link>
+    <link>http://localhost:1313/tags/%E7%8A%B6%E6%80%81%E7%A0%81/</link>
     <description>状态码 - 标签 | MeowRain Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
-      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Wed, 15 May 2024 19:24:44 &#43;0800</lastBuildDate><atom:link href="https://example.org/tags/%E7%8A%B6%E6%80%81%E7%A0%81/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Wed, 15 May 2024 19:24:44 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E7%8A%B6%E6%80%81%E7%A0%81/" rel="self" type="application/rss+xml" /><item>
   <title>HTTP状态码</title>
-  <link>https://example.org/posts/098d7b4/</link>
+  <link>http://localhost:1313/posts/098d7b4/</link>
   <pubDate>Wed, 15 May 2024 19:24:44 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>https://example.org/posts/098d7b4/</guid>
+  <guid>http://localhost:1313/posts/098d7b4/</guid>
   <description><![CDATA[1xx 状态码API 不需要1xx状态码，下面介绍其他四类状态码的精确含义。
 2xx 状态码200状态码表示操作成功，但是不同的方法可以返回更精确的状态码。
 GET: 200 OK POST: 201 Created PUT: 200 OK PATCH: 200 OK DELETE: 204 No Content 上面代码中，POST返回201状态码，表示生成了新的资源；DELETE返回204状态码，表示资源已经不存在。

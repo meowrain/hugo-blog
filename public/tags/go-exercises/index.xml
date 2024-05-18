@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Go-Exercises - 标签 - MeowRain Blog</title>
-    <link>https://example.org/tags/go-exercises/</link>
+    <link>http://localhost:1313/tags/go-exercises/</link>
     <description>Go-Exercises - 标签 | MeowRain Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
-      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 13:04:56 &#43;0800</lastBuildDate><atom:link href="https://example.org/tags/go-exercises/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 13:04:56 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/go-exercises/" rel="self" type="application/rss+xml" /><item>
   <title>Go Gophercises</title>
-  <link>https://example.org/posts/33dc7d7/</link>
+  <link>http://localhost:1313/posts/33dc7d7/</link>
   <pubDate>Sat, 18 May 2024 13:04:56 &#43;0800</pubDate>
   <author>meowrain</author>
-  <guid>https://example.org/posts/33dc7d7/</guid>
+  <guid>http://localhost:1313/posts/33dc7d7/</guid>
   <description><![CDATA[https://courses.calhoun.io/courses/cor_gophercises
 1. Quizhttps://github.com/gophercises/quiz
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 第一部分： 编写一个程序，该程序能够读取通过CSV文件提供的测验（详细信息如下），并向用户展示此测验。程序需记录用户答对和答错的题目数量。无论答案正确与否，都应立即提出下一题。 默认情况下，CSV文件名为problems.csv，但用户应能通过标志自定义文件名。 CSV文件的格式如下：第一列是问题，同一行的第二列则是该问题的答案。 你可以假设测验相对较短（少于100题），且答案为单个词或数字。 测验结束时，程序应输出答对的问题总数和总问题数。对于给出无效答案的问题，视为回答错误。 第二部分： 根据第一部分的要求调整你的程序以添加计时器功能。默认时间限制应为30秒，但也可通过标志进行自定义设置。 一旦超过时间限制，测验应立即停止。也就是说，不应等待用户回答最后一个问题，而应在理想情况下完全停止测验，即使当时正在等待用户的答案也应如此处理。 在计时开始前，应提示用户按下回车键（或其他键）启动计时器；然后题目应逐一出示在屏幕上直至用户提供答案为止。无论答案正确与否都将继续下一题的提问过程直到全部完成测试内容为止！最后依然需要统计出本次答题过程中总共答对了多少道题目以及一共出现了多少道题目信息并展示给参与者查看结果情况哦~同时也要注意那些没有被有效解答过的或者是根本就没有来得及去作答的部分也都算作是错误的哟！ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 package main import ( &#34;context&#34; &#34;encoding/csv&#34; &#34;flag&#34; &#34;fmt&#34; &#34;log&#34; &#34;os&#34; &#34;strconv&#34; &#34;time&#34; ) func CommandLine() (string, int) { csvFileName := flag.]]></description>

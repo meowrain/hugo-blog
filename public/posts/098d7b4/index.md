@@ -48,5 +48,5 @@ Location: /api/orders/12345
 ---
 
 > 作者: meowrain  
-> URL: https://example.org/posts/098d7b4/  
+> URL: http://localhost:1313/posts/098d7b4/  
 
