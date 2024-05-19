@@ -4,7 +4,37 @@
     <link>https://example.org/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
     <description>面向对象 - 分类 | MeowRain Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
-      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 13:12:26 &#43;0800</lastBuildDate><atom:link href="https://example.org/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sun, 19 May 2024 17:00:05 &#43;0800</lastBuildDate><atom:link href="https://example.org/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="self" type="application/rss+xml" /><item>
+  <title>软考-笔记</title>
+  <link>https://example.org/posts/831975a/</link>
+  <pubDate>Sun, 19 May 2024 17:00:05 &#43;0800</pubDate>
+  <author>meowrain</author>
+  <guid>https://example.org/posts/831975a/</guid>
+  <description><![CDATA[面向对象设计原则(部分) https://zhuanlan.zhihu.com/p/60791596
+共同重用原则：一个包中里的所有类应该是共同重用的，如果重用了包里的一个类，那么就要重用包中的所有类。 共同封闭原则： 如果一个变化对一个包产生影响，则将对该包里的所有类产生影响，而对其它包不产生任何影响。 开放-封闭原则：对扩展开放，对修改关闭。 接口分离原则： 接口的功能尽可能单一，降低模块的耦合性。 面向对象测试的四个层次 算法层 &ndash;&gt; 单元测试 类层 &ndash;&gt; 模块测试 模板层 &ndash;&gt; 主题层 系统层 &ndash;&gt; 把各个子系统组装成完整的面向对象软件系统，在组装过程进行测试 设计模式 面向对象类关系(继承、实现、依赖、关联、聚合、组合)：https://www.cnblogs.com/zhongj/p/11169780.html
+UML: https://blog.csdn.net/quyingzhe0217/article/details/133683814
+创建型模式 创建型设计模式包括以下几种常见的模式：
+工厂模式（Factory Pattern）：通过工厂方法或抽象工厂来创建对象，将对象的创建过程封装起来，使得客户端代码与具体类解耦。
+抽象工厂模式（Abstract Factory Pattern）：提供一个接口，用于创建相关或依赖对象的家族，而不需要指定具体类。
+单例模式（Singleton Pattern）：确保一个类只有一个实例，并提供一个全局访问点来访问该实例。
+建造者模式（Builder Pattern）：将一个复杂对象的构建过程与其表示分离，使得同样的构建过程可以创建不同的表示。
+原型模式（Prototype Pattern）：通过复制现有对象来创建新对象，而不是通过实例化来创建。
+结构型模式 结构型设计模式主要包括以下几种常见的模式： 适配器模式（Adapter Pattern）：将一个类的接口转换成客户端所期望的另一个接口，使得原本不兼容的类可以一起工作。
+桥接模式（Bridge Pattern）：将抽象部分与实现部分分离，使它们可以独立地变化，从而提高系统的灵活性。
+组合模式（Composite Pattern）：将对象组合成树形结构，以表示“部分-整体”的层次结构，使得客户端可以统一地处理单个对象和组合对象。
+装饰器模式（Decorator Pattern）：动态地给对象添加额外的职责，同时又不改变其接口。
+外观模式（Facade Pattern）：提供一个统一的接口，用于访问子系统中的一组接口，从而简化客户端与子系统之间的交互。
+享元模式（Flyweight Pattern）：通过共享细粒度的对象，以减少内存使用和提高性能。
+代理模式（Proxy Pattern）：为其他对象提供一个代理，以控制对这个对象的访问。
+行为模式 行为型设计模式主要包括以下几种常见的模式：
+观察者模式（Observer Pattern）：定义了一种一对多的依赖关系，使得多个观察者对象可以同时监听并收到被观察者对象的通知。
+策略模式（Strategy Pattern）：定义了一系列算法，并将每个算法封装起来，使它们可以相互替换，从而使算法的变化独立于使用算法的客户端。
+命令模式（Command Pattern）：将请求封装成对象，以使得可以用不同的请求对客户端进行参数化，同时支持请求的排队、记录和撤销。
+迭代器模式（Iterator Pattern）：提供一种顺序访问聚合对象中各个元素的方法，而又不暴露该对象的内部表示。
+状态模式（State Pattern）：允许对象在内部状态发生改变时改变其行为，使对象看起来像是修改了其类。
+责任链模式（Chain of Responsibility Pattern）：将请求的发送者和接收者解耦，使多个对象都有机会处理请求，从而避免请求的发送者与接收者之间的耦合关系。]]></description>
+</item>
+<item>
   <title>Javascript 面向对象</title>
   <link>https://example.org/posts/178f51c/</link>
   <pubDate>Sat, 18 May 2024 13:12:26 &#43;0800</pubDate>
