@@ -310,3 +310,87 @@ func main() {
 
 ![](https://static.meowrain.cn/i/2024/05/19/w5osxr-3.webp)
 
+
+## 编写时间服务器
+```go
+package main
+
+import (
+	"fmt"
+	"net"
+	"os"
+	"time"
+)
+
+func main() {
+	service := ":1200"
+	tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "resolve tcp addr failed:%v", err)
+		os.Exit(1)
+	}
+	listen, err := net.ListenTCP("tcp4", tcpAddr)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "listen to port failed:%v", err)
+		os.Exit(1)
+	} else {
+		fmt.Println("time server listening in localhost:1200")
+	}
+	for {
+		conn, err := listen.Accept()
+		if err != nil {
+			continue
+		}
+		daytime := time.Now().String()
+		conn.Write([]byte(daytime))
+		fmt.Println("Write to client info:%s", daytime)
+		conn.Close()
+	}
+
+}
+
+```
+
+
+编写对应客户端:`
+```go
+package main
+
+import (
+	"fmt"
+	"io"
+	"net"
+	"os"
+)
+
+func main() {
+	if len(os.Args) != 2 {
+		fmt.Fprintf(os.Stderr, "Usage: %s host:port\n", os.Args[0])
+		os.Exit(1)
+	}
+	service := os.Args[1]
+	tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "ResolveTCPAddr failed: %v\n", err)
+		os.Exit(1)
+	}
+
+	conn, err := net.DialTCP("tcp", nil, tcpAddr)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "DialTCP failed: %v\n", err)
+		os.Exit(1)
+	}
+
+	defer conn.Close()
+	res, err := io.ReadAll(conn)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Read from connection failed:%v", err)
+		os.Exit(1)
+	}
+
+	fmt.Println(string(res))
+}
+
+```
+
+![](https://static.meowrain.cn/i/2024/05/19/x5yofr-3.webp)
