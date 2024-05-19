@@ -194,3 +194,119 @@ func main() {
 }
 ```
 ![](https://static.meowrain.cn/i/2024/05/18/vzivcf-3.webp)
+
+
+## Port
+```go
+package main
+
+import (
+	"fmt"
+	"net"
+	"os"
+)
+
+func main() {
+	if len(os.Args) < 3 {
+		fmt.Fprintf(os.Stderr, "Usage: %s network-type service ", os.Args[0])
+		os.Exit(1)
+	}
+	networkType := os.Args[1]
+	service := os.Args[2]
+	port, err := net.LookupPort(networkType, service)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, err.Error())
+		os.Exit(1)
+	}
+	fmt.Println("Service port:", port)
+	os.Exit(0)
+}
+
+```
+
+![](https://static.meowrain.cn/i/2024/05/19/umv30e-3.webp)
+
+![](https://static.meowrain.cn/i/2024/05/19/uoomsv-3.webp)
+
+
+## TCPAddr
+
+```go
+// TCPAddr represents the address of a TCP end point.
+type TCPAddr struct {
+	IP   IP
+	Port int
+	Zone string // IPv6 scoped addressing zone
+}
+```
+
+```go
+package main
+
+import (
+	"fmt"
+	"net"
+)
+
+func main() {
+	addr2, err := net.ResolveTCPAddr("tcp", "baidu.com:443")
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Printf("addr domain:%s,port:%d", addr2.IP, addr2.Port)
+
+	// fmt.Println(addr)
+}
+
+```
+
+
+![](https://static.meowrain.cn/i/2024/05/19/vpk00w-3.webp)
+
+## 编写一个TCP客户端
+```go
+package main
+
+import (
+	"fmt"
+	"io"
+	"net"
+	"os"
+)
+
+func main() {
+	if len(os.Args) < 2 {
+		fmt.Fprintf(os.Stderr, "Usage: %s host:port", os.Args[0])
+		os.Exit(1)
+	}
+	service := os.Args[1]
+	tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "resolve input failed %v", err)
+		os.Exit(1)
+	}
+	conn, err := net.DialTCP("tcp", nil, tcpAddr)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "connection failed: %v", err)
+		os.Exit(1)
+	}
+	defer conn.Close()
+	_, err = conn.Write([]byte("HEAD / HTTP/1.0\r\n\r\n"))
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Write failed:%v", err)
+		os.Exit(1)
+	}
+	result, err := io.ReadAll(conn)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Read from connection failed:%v", err)
+		os.Exit(1)
+	}
+
+	fmt.Println(string(result))
+	os.Exit(0)
+}
+
+```
+
+![](https://static.meowrain.cn/i/2024/05/19/w5osxr-3.webp)
+
