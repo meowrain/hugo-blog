@@ -394,3 +394,182 @@ func main() {
 ```
 
 ![](https://static.meowrain.cn/i/2024/05/19/x5yofr-3.webp)
+
+
+## 多线程服务器
+> 在这个示例中，我们完成一个接受客户端信息，然后再把客户端信息返回给客户端的服务器,而且它允许客户端进行连接
+>
+```go
+package main
+
+import (
+	"fmt"
+	"io"
+	"net"
+	"os"
+)
+
+func main() {
+	service := ":1202"
+	tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Resolve Tcp addr failed: %s", err)
+		os.Exit(1)
+	}
+	listen, err := net.ListenTCP("tcp4", tcpAddr)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "listen to tcp failed: %s", err)
+		os.Exit(1)
+	}
+	for {
+		conn, err := listen.Accept()
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "accept error:%s", err)
+			continue
+		}
+		go handleClient(conn)
+
+	}
+}
+func handleClient(conn net.Conn) {
+	defer conn.Close()
+	var buf [512]byte
+	for {
+		n, err := conn.Read(buf[0:])
+		if err != nil {
+			if err == io.EOF {
+				// Connection was closed by the client
+				fmt.Println("Client disconnected")
+			} else {
+				fmt.Fprintf(os.Stderr, "Read from connection failed: %s", err)
+			}
+			return
+		}
+		fmt.Println("Read from the client", string(buf[0:n]))
+		_, err = conn.Write(buf[0:n])
+		fmt.Println("Send the same message to client")
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Write to connection failed: %s", err)
+			return
+		}
+
+	}
+}
+```
+
+
+## 超时服务器
+
+```go
+package main
+
+import (
+	"fmt"
+	"io"
+	"net"
+	"os"
+	"time"
+)
+
+func main() {
+	service := ":1203"
+	tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Resolve Tcp addr failed: %s", err)
+		os.Exit(1)
+	}
+	listen, err := net.ListenTCP("tcp4", tcpAddr)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "listen to tcp failed: %s", err)
+		os.Exit(1)
+	}
+	for {
+		conn, err := listen.Accept()
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Error accepting tcp connection: %s", err)
+			os.Exit(1)
+		}
+		tcpConn, ok := conn.(*net.TCPConn)
+
+		if !ok {
+			fmt.Println("Failed to cast to TCPConn")
+			return
+		}
+		// 设置读取超时
+		tcpConn.SetReadDeadline(time.Now().Add(5 * time.Second))
+
+		// 设置写入超时
+		tcpConn.SetWriteDeadline(time.Now().Add(5 * time.Second))
+
+		// 设置读取和写入的统一超时
+		tcpConn.SetDeadline(time.Now().Add(5 * time.Second))
+		go handleClient(tcpConn)
+	}
+
+}
+func handleClient(conn net.Conn) {
+	defer conn.Close()
+	var buf [512]byte
+	for {
+		n, err := conn.Read(buf[0:])
+		if err != nil {
+			if err == io.EOF {
+				// Connection was closed by the client
+				fmt.Println("Client disconnected")
+			} else {
+				fmt.Fprintf(os.Stderr, "Read from connection failed: %s", err)
+			}
+			return
+		}
+		fmt.Println("Read from the client", string(buf[0:n]))
+		_, err = conn.Write(buf[0:n])
+		fmt.Println("Send the same message to client")
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Write to connection failed: %s", err)
+			return
+		}
+
+	}
+}
+
+```
+
+![](https://static.meowrain.cn/i/2024/05/22/kn6q1w-3.webp)
+
+## 客户端保持连接
+
+```go
+package main
+
+import (
+	"fmt"
+	"net"
+	"time"
+)
+
+func main() {
+	serverAddr := "localhost:1203"
+
+	// 连接到服务器
+	conn, err := net.Dial("tcp", serverAddr)
+	if err != nil {
+		fmt.Println("Error connecting to server:", err)
+		return
+	}
+	defer conn.Close()
+
+	fmt.Println("Connected to server")
+
+	// 关闭超时控制，保持连接打开
+	conn.(*net.TCPConn).SetKeepAlive(true)
+	conn.SetDeadline(time.Time{})
+
+	// 保持连接，不做任何操作
+	select {}
+}
+
+```
+
+![](https://static.meowrain.cn/i/2024/05/22/kphz7r-3.webp)
+
+
