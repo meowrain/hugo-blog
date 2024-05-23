@@ -9,7 +9,7 @@ NC='\033[0m' # 无颜色
 # 执行相关命令
 # 构建静态文件
 echo -e "${YELLOW} Start Building blog....${NC}\n"
-hugo
+hugo --gc
 
 echo -e "${YELLOW} Change Directory to blog root....${NC}\n"
 cd ..
