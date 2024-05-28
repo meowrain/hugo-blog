@@ -163,11 +163,18 @@
     </a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/297df01/">计算机网络基础知识</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      meowrain</span></span>&nbsp;<span class="post-publish" title='2024-05-26 20:41:07'>发布于 <time datetime="2024-05-26">2024-05-26</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category" title="分类 - 计算机网络"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 计算机网络</a></span></div><div class="content">网络模型 OSI七层网络模型 应用层 表示层 会话层 传输层 网络层 数据链路层 物理层 各层传输的数据单元(Protocol Data Unit) https://zh.wikipedia.org/wiki/%E5%8D%8F%E8%AE%AE%E6%95%B0%E6%8D%AE%E5%8D%95%E5%85%83 物理层: 比特流(bit) 数据链路层: 数据帧(frame) 网络层: 数据包(packet) 传输层: 数据段(segment)--&gt;TCP 数据报(datagram) --&gt; UDP 应用层: 报文(message)
-TCP/IP网络模型 应用层 传输层 网络层 网络接口层 IP IP 在 TCP/IP 参考模型中处于第三层，也就是网络层。
+      meowrain</span></span>&nbsp;<span class="post-publish" title='2024-05-26 20:41:07'>发布于 <time datetime="2024-05-26">2024-05-26</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category" title="分类 - 计算机网络"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 计算机网络</a></span></div><div class="content">基础知识 MAC地址 （1）计算机联网必须的硬件是安装在计算机上的网卡
+（2）通信中，用来标识主机身份的地址就是制作在网卡上的一个硬件地址。每块网卡在 生产出来后，都有一个全球唯一的编号来标识自己，这个地址就是MAC地址，即网卡的 物理地址
+（3）MAC地址由48位二进制数组成，通常分成六段，用16进制表示，其中前24位是生 产厂商向IEEE申请的厂商编号，后24位是网络接口卡序列号
+（4）MAC地址的第8位为0时，表示该MAC地址为单播地址；为1时，表示该MAC地址 为组播MAC地址。
+（5）单播的发送方式为一对一，即一台主机发送的数据只发送给另一台主机。
+（6）广播方式为一对多，即一台主机发送一个数据，在这个网段的所有主机都能收到
+（7）组播方式介于单播和广播之间，也是一对多，但接收者不是网段上的全体成员，而 是一个特定的组的成员。 以太网帧格式： IP IP 在 TCP/IP 参考模型中处于第三层，也就是网络层。
 网络层的主要作用是：实现主机与主机之间的通信，也叫点对点（end to end）通信。
 IP 地址的基础知识 IP 地址（IPv4 地址）由 32 位正整数来表示，IP 地址在计算机是以二进制的方式处理的。 人类为了方便记忆采用了点分十进制的标记方式，也就是将 32 位 IP 地址以每 8 位为组，共分为 4 组，每组以「.」隔开，再将每组转换成十进制。 IP地址分类 A类: 0.0.0.0 ~ 127.255.255.255 B类: 128.0.0.0 ~ 191.255.255.255 C类: 192.0.0.0 ~ 223.255.255.255
-A类就是32位里面，第1位是0，后面7位是网络号，剩下的都是主机号(24位) B类就是32位里面，前2位是10，后面14位为网络号，剩下都是主机号(16位) C类就是32位里面，前3位是110，后面21位为网络号，剩下都是主机号(8位)</div><div class="post-footer">
+A类就是32位里面，第1位是0，后面7位是网络号，剩下的都是主机号(24位) B类就是32位里面，前2位是10，后面14位为网络号，剩下都是主机号(16位) C类就是32位里面，前3位是110，后面21位为网络号，剩下都是主机号(8位)
+最大主机数计算方法: 假如主机号位数是n，那么最大主机数就是2^n - 2
+减2是因为在 IP 地址中，有两个 IP 是特殊的，分别是主机号全为 1 和 全为 0 地址。</div><div class="post-footer">
     <a href="/posts/297df01/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/' class="post-tag">计算机网络协议</a><a href='/tags/tcp/' class="post-tag">TCP</a><a href='/tags/udp/' class="post-tag">UDP</a><a href='/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/' class="post-tag">网络协议</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/6607266/">Java Spring笔记06 Bean的实例化模式 Spring</a>
