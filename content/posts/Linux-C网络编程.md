@@ -241,7 +241,7 @@ int main() {
 
 `INET_ADDRSTRLEN` 是一个宏，它定义了一个足够大的缓冲区大小，用于存储点分十进制表示的 IPv4 地址字符串。具体来说，它的值为 16，因为一个完整的 IPv4 地址（包括终止的 null 字符）最多需要 16 个字符。
 
-![image-20240612164728152](https://static.meowrain.cn/i/2024/06/12/r8r83p-3.webp)
+
 
 ### 使用示例改进
 
@@ -375,7 +375,7 @@ int main() {
     
 }
 ```
-![](https://static.meowrain.cn/i/2024/04/16/vpihvz-3.webp)
+
 
 # 默认ip
 ```c
@@ -401,7 +401,7 @@ int main() {
     return 0;
 }
 ```
-![](https://static.meowrain.cn/i/2024/04/16/w7uf0i-3.webp)
+
 
 ---
 
@@ -993,11 +993,11 @@ int main(int argc, char *argv[]) {
 
 # socket
 
-![](https://static.meowrain.cn/i/2024/06/12/pid1pa-3.webp)
+
 
 ## socket函数
 
-![image-20240612151516615](https://static.meowrain.cn/i/2024/06/12/p23kb3-3.webp)
+
 
 `socket()` 函数用于创建一个新的套接字，并返回一个套接字描述符。套接字描述符是一个整数，用于标识套接字。该函数是网络编程的基础，几乎所有的网络操作都需要使用它。
 
@@ -1129,7 +1129,7 @@ int main() {
 
 ## bind函数
 
-![image-20240612151501599](https://static.meowrain.cn/i/2024/06/12/p20adq-3.webp)
+
 
 `bind()` 函数用于将套接字与特定的地址（通常是本地地址）和端口绑定在一起。它通常用于服务器程序，以便在指定的地址和端口上监听客户端的连接或数据。
 
@@ -1313,7 +1313,7 @@ int main() {
 
 ## listen函数
 
-![image-20240612154004128](https://static.meowrain.cn/i/2024/06/12/pgwn2t-3.webp)
+
 
 `listen()` 函数用于将套接字设置为被动模式，即用于接受来自客户端的连接请求。它通常在服务器程序中使用，`listen()` 函数配置的套接字可以接受连接请求，并通过 `accept()` 函数来处理这些请求。
 
@@ -1504,7 +1504,7 @@ int main() {
 
 ## connect函数
 
-![image-20240612151435067](https://static.meowrain.cn/i/2024/06/12/p1nm7v-3.webp)
+
 
 `connect()` 函数用于将套接字连接到指定的地址。在客户端程序中，`connect()` 函数用于与服务器建立连接。在建立连接后，可以使用 `send()` 和 `recv()` 函数进行数据传输。
 
@@ -1716,7 +1716,7 @@ int main() {
 
 ## accept函数
 
-![image-20240612152450136](https://static.meowrain.cn/i/2024/06/12/p7nny7-3.webp)
+
 
 `accept()` 函数用于接受来自客户端的连接请求。它在服务器程序中使用，允许服务器从已经处于监听状态的套接字队列中提取第一个连接请求，并返回一个新的套接字描述符，用于与客户端进行通信。
 
@@ -1909,9 +1909,7 @@ int main() {
 
 ## `send()` and `recv()`
 
-![image-20240612152516545](https://static.meowrain.cn/i/2024/06/12/p81tyq-3.webp)
 
-![image-20240612152527038](https://static.meowrain.cn/i/2024/06/12/p83vum-3.webp)
 
 `send()` 和 `recv()` 函数用于在已连接的套接字之间进行数据传输。`send()` 用于发送数据，`recv()` 用于接收数据。这两个函数通常用于基于 TCP 的连接，但也可以用于连接到远程地址的 UDP 套接字。
 
@@ -2397,7 +2395,7 @@ int main() {
 
 ## `sendto()` and `recvfrom()`
 
-![image-20240612152634628](https://static.meowrain.cn/i/2024/06/12/p8r3u2-3.webp)
+
 
 `sendto()` 和 `recvfrom()` 函数用于在没有连接的情况下（如 UDP）进行数据传输。这些函数允许指定目标地址和端口，适用于面向数据报的套接字（如 UDP 套接字）。
 
@@ -3959,7 +3957,7 @@ while (1) {
 > 使用poll函数实现IO多路复用，实现一个聊天室。
 
 ### 目录结构
-![](https://static.meowrain.cn/i/2024/06/13/zo9v5z-3.webp)
+![](https://static.meowrain.cn/i/2024/06/14/qz5yjs-3.webp)
 
 ### 代码实现
 > - Makefile
