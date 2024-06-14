@@ -15,7 +15,7 @@ echo -e "${YELLOW} Change Directory to blog root....${NC}\n"
 cd ..
 echo -e "${YELLOW} Uploading files to Server....${NC}\n"
 # 上传本地目录到远程的wwwroot
-rsync -avz --delete ./* meowrainServer:/root/wwwroot/hugo-blog
+rsync -avz --delete ./ meowrainServer:/root/wwwroot/hugo-blog/
 echo -e "${GREEN} Uploading Successfully!${NC}\n"
 echo -e "${YELLOW} Back to hugo-blog directory${NC}\n"
 cd -
