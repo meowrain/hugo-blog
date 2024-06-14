@@ -4318,3 +4318,37 @@ void broadcast_message(struct pollfd *fds, int nfds, int sender_fd, const char *
 ```
 
 我们看到，这里定义了缓冲区大小，以及一些必要的头文件。
+然后是三个函数，`handle_new_connection`，`handle_client_message`和`broadcast_message`
+
+handle_new_connection 这个函数是用来处理连接的，我们看看这个函数的实现
+
+```c
+void handle_new_connection(int server_socket, struct pollfd *fds, int *nfds)
+{
+    struct sockaddr_in client_addr;
+    socklen_t clientaddr_len = sizeof(client_addr);
+    int client_socket = accept(server_socket, (struct sockaddr *)&client_addr, &clientaddr_len);
+    if (client_socket == -1)
+    {
+        perror("accept");
+        exit(EXIT_FAILURE);
+    }
+    else
+    {
+        char client_ip[INET_ADDRSTRLEN];
+        inet_ntop(AF_INET, &client_addr.sin_addr, client_ip, sizeof(client_ip));
+        printf("New connection accepted from %s:%d\n", client_ip, ntohs(client_addr.sin_port));
+        char newbuffer[BUFFER_SIZE];
+        sprintf(newbuffer,"Welcome,Friends,You are login in my server now,your ip is:%s\n", client_ip);
+        send(client_socket,newbuffer,strlen(newbuffer),0);
+        fds[*nfds].fd = client_socket;
+        fds[*nfds].events = POLLIN;
+        (*nfds)++;
+    }
+}
+```
+
+> struct sockaddr_in client_addr;
+> 套接字地址结构体，用于在套接字编程中表示IPV4类型的套接字地址
+>
+> 然后我们用一个变量存储这个套接字结构体的大小
