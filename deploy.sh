@@ -14,12 +14,13 @@ hugo --gc
 echo -e "${YELLOW} Change Directory to blog root....${NC}\n"
 cd ..
 echo -e "${YELLOW} Uploading files to Server....${NC}\n"
-bash ./rsync.sh
+# 上传本地目录到远程的wwwroot
+rsync -avz --delete . meowrainServer:/root/wwwroot
 echo -e "${GREEN} Uploading Successfully!${NC}\n"
 echo -e "${YELLOW} Back to hugo-blog directory${NC}\n"
 cd -
 
-# 上传到github
+#上传到github
 echo -e "${YELLOW} Start push to github....${NC}\n"
 git add .
 git commit -m "posts added"
