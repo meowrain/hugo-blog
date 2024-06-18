@@ -36,6 +36,13 @@ repost:
 
 # See details front matter: https://fixit.lruihao.cn/documentation/content-management/introduction/#front-matter
 ---
+## 参考文档
+> https://jacktang816.github.io/post/tinyhttpdread/
+
+
+# 执行过程
+
+![](https://static.meowrain.cn/i/2024/06/18/w1xt3e-3.webp)
 
 # HTTP
 
@@ -145,6 +152,171 @@ Connection: keep-alive\r\n
    \r\n
    ```
    - 空行表示 HTTP 响应头的结束，接下来是响应的主体（如果有）。
+
+# accept_request() 函数
+好的，根据注释描述这个函数的执行过程如下：
+
+### `accept_request` 函数
+
+这个函数的主要任务是处理 HTTP 请求，根据请求的内容返回相应的网页或执行 CGI 程序。它分为几个主要步骤：读取请求头、解析请求方法和 URL、处理 GET/POST 请求、判断文件类型和权限、返回文件内容或执行 CGI 脚本。
+```c
+void accept_request(void *arg)
+{
+    // socket
+    int client = (intptr_t)arg; //client套接字
+    char buf[1024]; //存储从套接字中读取到的内容
+    int numchars; //表示读取到的字节数
+    char method[255]; //存储请求方法
+    char url[255]; //存储url
+    char path[512];//存储路径
+    size_t i, j; //两个索引指针
+    struct stat st;//存储网页文件的文件信息
+    int cgi = 0; //cgi是否启用，如果设置为1，默认启用
+    char *query_string = NULL; //请求参数
+    // 根据上面的Get请求，可以看到这边就是取第一行
+    // 这边都是在处理第一条http信息
+
+    numchars = get_line(client, buf, sizeof(buf));//先从套接字读取一行数据到buf中，然后返回读取到的字节数
+    i = 0;
+    j = 0;
+
+    // 第一行字符串提取Get
+        //"GET / HTTP/1.1\n"
+    while (!ISspace(buf[j]) && (i < sizeof(method) - 1))
+    {
+        //读到GET后的space后，循环就终止了，正好把GET读取到method数组中了
+        method[i] = buf[j];
+        i++;
+        j++;
+    }
+    // 结束
+    method[i] = '\0';
+
+    // 如果两个都不是，直接返回是不支持的请求类型
+    //strcasecmd 和 strcmp一样，相等返回0
+    if (strcasecmp(method, "GET") && strcasecmp(method, "POST"))
+    {
+        unimplemented(client);
+        return;
+    }
+
+    // 如果是POST，cgi置为1
+    if (strcasecmp(method, "POST") == 0)
+        cgi = 1;
+
+    i = 0; // i指针归零
+    // 跳过空格
+    while (ISspace(buf[j]) && (j < sizeof(buf)))
+        j++;
+
+    // 得到 "/"   注意：如果你的http的网址为http://192.168.0.23:47310/index.html
+    //                那么你得到的第一条http信息为GET /index.html HTTP/1.1，那么
+    //                解析得到的就是/index.html
+    while (!ISspace(buf[j]) && (i < sizeof(url) - 1) && (j < sizeof(buf)))
+    {
+        url[i] = buf[j];
+        i++;
+        j++;
+    }
+    url[i] = '\0';
+
+    // 判断Get请求
+    if (strcasecmp(method, "GET") == 0)
+    {
+        query_string = url;
+        while ((*query_string != '?') && (*query_string != '\0'))
+            query_string++;
+        if (*query_string == '?')
+        {
+            cgi = 1;
+            *query_string = '\0';
+            query_string++;
+        }
+    }
+
+    // 路径
+    sprintf(path, "htdocs%s", url);
+
+    // 默认地址，解析到的路径如果为/，则自动加上index.html
+    if (path[strlen(path) - 1] == '/')
+        strcat(path, "index.html");
+
+    // 获得文件信息
+    if (stat(path, &st) == -1)
+    {
+        // 把所有http信息读出然后丢弃
+        while ((numchars > 0) && strcmp("\n", buf)) /* read & discard headers */
+            numchars = get_line(client, buf, sizeof(buf));
+
+        // 没有找到
+        not_found(client);
+    }
+    else
+    {
+        mode_t file_type = st.st_mode & S_IFMT;
+        if (file_type == S_IFDIR)
+            strcat(path, "/index.html");
+        // 如果你的文件默认是有执行权限的，自动解析成cgi程序，如果有执行权限但是不能执行，会接受到报错信号
+        if ((st.st_mode & S_IXUSR) ||
+            (st.st_mode & S_IXGRP) ||
+            (st.st_mode & S_IXOTH))
+            cgi = 1;
+        if (!cgi)
+            // 接读取文件返回给请求的http客户端
+            serve_file(client, path);
+        else
+            // 执行cgi文件
+            execute_cgi(client, path, method, query_string);
+    }
+    // 执行完毕关闭socket
+    close(client);
+}
+
+```
+
+### 执行过程描述
+
+1. **初始化和读取请求**：
+   - 将传入的 `arg` 转换为客户端的套接字 `client`。
+   - 初始化缓冲区 `buf` 用于存储读取的数据，初始化其他变量。
+   - 调用 `get_line` 从客户端套接字读取一行数据到 `buf`，并将读取到的字节数存储在 `numchars` 中。
+
+2. **解析请求方法**：
+   - 从 `buf` 中提取请求方法（如 `GET` 或 `POST`），并存储在 `method` 数组中。
+   - 如果请求方法既不是 `GET` 也不是 `POST`，则返回未实现的错误。
+
+3. **处理 POST 请求**：
+   - 如果请求方法是 `POST`，则将 `cgi` 标志置为 1。
+
+4. **提取 URL**：
+   - 跳过空格，继续从 `buf` 中提取 URL，并存储在 `url` 数组中。
+
+5. **处理 GET 请求的查询字符串**：
+   - 如果请求方法是 `GET`，则进一步解析 URL 中的查询字符串（如果有）。
+
+6. **构建文件路径**：
+   - 根据提取的 URL 构建文件路径，存储在 `path` 数组中。
+   - 如果 URL 以 `/` 结尾，自动添加 `index.html`。
+
+7. **获取文件信息**：
+   - 调用 `stat` 函数获取文件信息并存储在 `st` 结构中。
+   - 如果文件不存在（即 `stat` 返回 -1），则读取并丢弃所有的 HTTP 请求头信息，并返回 404 错误。
+
+8. **处理文件信息**：
+   - 检查文件类型是否为目录，如果是，则自动添加 `index.html`。
+   - 检查文件是否具有执行权限，如果有，则将 `cgi` 标志置为 1。
+
+9. **处理文件或执行 CGI**：
+   - 如果未启用 CGI，则读取文件内容并返回给客户端。
+   - 如果启用了 CGI，则执行相应的 CGI 脚本。
+
+10. **关闭套接字**：
+    - 处理完请求后，关闭客户端的套接字。
+
+通过这些步骤，`accept_request` 函数能够处理基本的 HTTP 请求，包括静态文件的返回和 CGI 脚本的执行。
+
+
+
 
 # badrequest() 函数 notfound()函数  unimplemented()函数
 
