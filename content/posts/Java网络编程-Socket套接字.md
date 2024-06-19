@@ -10,9 +10,9 @@ license: CC
 comment: true
 weight: 0
 tags:
-  - draft
+  - Java网络编程
 categories:
-  - draft
+  - 网络编程
 hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRss: false
