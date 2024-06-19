@@ -10,11 +10,11 @@ license: CC
 comment: true
 weight: 0
 tags:
-  - Go 
-categories:
   - Go
   - 函数库
-  - http
+  - http 
+categories:
+  - Go
 hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRss: false
