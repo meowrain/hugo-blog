@@ -488,7 +488,7 @@ enableEmoji = true
     fontFamily = "inherit"
   # Cookie consent config
   [params.cookieconsent]
-    enable = true
+    enable = false
     # text strings used for Cookie consent banner
     [params.cookieconsent.content]
       message = ""
