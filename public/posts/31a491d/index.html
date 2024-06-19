@@ -190,66 +190,77 @@
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#返回字符串">返回字符串</a></li>
-    <li><a href="#返回-json">返回 json</a></li>
-    <li><a href="#返回-map">返回 map</a></li>
-    <li><a href="#返回原始-json">返回原始 json</a></li>
-    <li><a href="#返回-html-并传递参数">返回 html 并传递参数</a>
+    <li><a href="#go-语言-web-框架-gin">Go 语言 Web 框架 Gin</a></li>
+    <li><a href="#返回各种值">返回各种值</a>
       <ul>
-        <li><a href="#静态文件配置">静态文件配置</a></li>
+        <li><a href="#返回字符串">返回字符串</a></li>
+        <li><a href="#返回-json">返回 json</a></li>
+        <li><a href="#返回-map">返回 map</a></li>
+        <li><a href="#返回原始-json">返回原始 json</a></li>
+        <li><a href="#返回-html-并传递参数">返回 html 并传递参数</a>
+          <ul>
+            <li><a href="#静态文件配置">静态文件配置</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#301-和-302-的区别">301 和 302 的区别</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#默认路由">默认路由</a></li>
-    <li><a href="#路由组">路由组</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#查询参数">查询参数</a></li>
-    <li><a href="#动态参数">动态参数</a></li>
-    <li><a href="#表单参数-postform">表单参数 PostForm</a></li>
-    <li><a href="#原始参数">原始参数</a>
-      <ul>
-        <li><a href="#解析-json-数据">解析 json 数据</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#简单实现以下-crud">简单实现以下 CRUD</a></li>
-    <li><a href="#文件上传">文件上传</a>
-      <ul>
-        <li><a href="#上传单个文件">上传单个文件</a></li>
-        <li><a href="#上传多个文件">上传多个文件</a></li>
-        <li><a href="#判断上传文件的类型">判断上传文件的类型</a></li>
-        <li><a href="#使用-gin-编写文件服务器">使用 gin 编写文件服务器</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#获取所有请求头">获取所有请求头</a></li>
-    <li><a href="#绑定参数-bind">绑定参数 bind</a></li>
-    <li><a href="#常用验证器">常用验证器</a></li>
-    <li><a href="#gin-内置验证器httpsdocsfengfengzhidaocomdocsgine6a186e69eb6e69687e6a1a34binde7bb91e5ae9ae599a8idgine58685e7bdaee9aa8ce8af81e599a8"><a href="https://docs.fengfengzhidao.com/#/docs/Gin%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/4.bind%E7%BB%91%E5%AE%9A%E5%99%A8?id=gin%e5%86%85%e7%bd%ae%e9%aa%8c%e8%af%81%e5%99%a8">gin 内置验证器</a></a></li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#重定向">重定向</a>
       <ul>
         <li>
           <ul>
-            <li><a href="#记录接口耗时的中间件">记录接口耗时的中间件</a></li>
+            <li><a href="#301-和-302-的区别">301 和 302 的区别</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#路由">路由</a>
+      <ul>
+        <li><a href="#默认路由">默认路由</a></li>
+        <li><a href="#路由组">路由组</a></li>
+      </ul>
+    </li>
+    <li><a href="#参数">参数</a>
+      <ul>
+        <li><a href="#查询参数">查询参数</a></li>
+        <li><a href="#动态参数">动态参数</a></li>
+        <li><a href="#表单参数-postform">表单参数 PostForm</a></li>
+        <li><a href="#原始参数">原始参数</a>
+          <ul>
+            <li><a href="#解析-json-数据">解析 json 数据</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#四大请求方式">四大请求方式</a>
+      <ul>
+        <li><a href="#简单实现以下-crud">简单实现以下 CRUD</a></li>
+        <li><a href="#文件上传">文件上传</a>
+          <ul>
+            <li><a href="#上传单个文件">上传单个文件</a></li>
+            <li><a href="#上传多个文件">上传多个文件</a></li>
+            <li><a href="#判断上传文件的类型">判断上传文件的类型</a></li>
+            <li><a href="#使用-gin-编写文件服务器">使用 gin 编写文件服务器</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#请求头相关">请求头相关</a>
+      <ul>
+        <li><a href="#获取所有请求头">获取所有请求头</a></li>
+        <li><a href="#绑定参数-bind">绑定参数 bind</a></li>
+        <li><a href="#常用验证器">常用验证器</a></li>
+        <li><a href="#gin-内置验证器httpsdocsfengfengzhidaocomdocsgine6a186e69eb6e69687e6a1a34binde7bb91e5ae9ae599a8idgine58685e7bdaee9aa8ce8af81e599a8"><a href="https://docs.fengfengzhidao.com/#/docs/Gin%E6%A1%86%E6%9E%B6%E6%96%87%E6%A1%A3/4.bind%E7%BB%91%E5%AE%9A%E5%99%A8?id=gin%e5%86%85%e7%bd%ae%e9%aa%8c%e8%af%81%e5%99%a8">gin 内置验证器</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#gin-中间件">Gin 中间件</a>
+      <ul>
+        <li>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#记录接口耗时的中间件">记录接口耗时的中间件</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>

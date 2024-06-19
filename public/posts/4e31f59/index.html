@@ -189,30 +189,37 @@
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#练习1证明当数组赋值时发生了数组内存拷贝">练习1：证明当数组赋值时，发生了数组内存拷贝。</a></li>
-    <li><a href="#练习2写一个循环并用下标给数组赋值从-0-到-15并且将数组打印在屏幕上">练习2:写一个循环并用下标给数组赋值（从 0 到 15）并且将数组打印在屏幕上。</a></li>
-    <li><a href="#练习3通过数组我们可以更快的计算出-fibonacci-数完成该方法并打印出前-50-个-fibonacci-数字">练习3：通过数组我们可以更快的计算出 Fibonacci 数。完成该方法并打印出前 50 个 Fibonacci 数字。</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#练习4-给定切片-sl将一个-byte-数组追加到-sl-后面写一个函数-appendslice-data-byte-byte该函数在-sl-不能存储更多数据的时候自动扩容">练习4： 给定切片 <code>sl</code>，将一个 <code>[]byte</code> 数组追加到 <code>sl</code> 后面。写一个函数 <code>Append(slice, data []byte) []byte</code>，该函数在 <code>sl</code> 不能存储更多数据的时候自动扩容。</a></li>
-    <li><a href="#练习5把一个缓存-buf-分片成两个切片第一个是前-n-个-bytes后一个是剩余的用一行代码实现">练习5：把一个缓存 <code>buf</code> 分片成两个切片：第一个是前 <code>n</code> 个 bytes，后一个是剩余的，用一行代码实现。</a></li>
-    <li><a href="#练习5遍历多维切片使用for-range">练习5：遍历多维切片，使用for-range</a></li>
-    <li><a href="#练习6通过使用省略号操作符--来实现累加方法">练习6：通过使用省略号操作符 <code>...</code> 来实现累加方法。</a></li>
-    <li><a href="#练习7给定一个切片-s-int-和一个-int-类型的因子-factor扩展-s-使其长度为-lens--factor">练习7：给定一个切片 <code>s []int</code> 和一个 <code>int</code> 类型的因子 <code>factor</code>，扩展 <code>s</code> 使其长度为 <code>len(s) * factor</code>。</a></li>
-    <li><a href="#练习8用顺序函数过滤容器s-是前-10-个整型的切片构造一个函数-filter第一个参数是-s第二个参数是一个-fn-funcint-bool返回满足函数-fn-的元素切片通过-fn-测试方法测试当整型值是偶数时的情况">练习8:用顺序函数过滤容器：<code>s</code> 是前 10 个整型的切片。构造一个函数 <code>Filter</code>，第一个参数是 <code>s</code>，第二个参数是一个 <code>fn func(int) bool</code>，返回满足函数 <code>fn</code> 的元素切片。通过 <code>fn</code> 测试方法测试当整型值是偶数时的情况</a></li>
-    <li><a href="#练习9写一个函数-insertstringslice-将切片插入到另一个切片的指定位置">练习9:写一个函数 <code>InsertStringSlice()</code> 将切片插入到另一个切片的指定位置。</a></li>
-    <li><a href="#练习10写一个函数-removestringslice-将从-start-到-end-索引的元素从切片中移除">练习10:写一个函数 <code>RemoveStringSlice()</code> 将从 <code>start</code> 到 <code>end</code> 索引的元素从切片中移除。</a></li>
-    <li><a href="#练习11从字符串生成切片">练习11：从字符串生成切片</a></li>
-    <li><a href="#练习12修改字符串中的某个字符">练习12：修改字符串中的某个字符</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#练习13编写一个函数要求其接受两个参数原始字符串-str-和分割索引-i然后返回两个分割后的字符串">练习13：编写一个函数，要求其接受两个参数，原始字符串 str 和分割索引 i，然后返回两个分割后的字符串。</a></li>
-    <li><a href="#练习14假设有字符串-str那么-strlenstr2--strlenstr2-的结果是什么">练习14：假设有字符串 str，那么 str[len(str)/2:] + str[:len(str)/2] 的结果是什么？</a></li>
-    <li><a href="#练习15编写一个程序要求能够反转字符串即将-google-转换成-elgoog提示使用-byte-类型的切片">练习15:编写一个程序，要求能够反转字符串，即将 &ldquo;Google&rdquo; 转换成 &ldquo;elgooG&rdquo;（提示：使用 []byte 类型的切片）。</a></li>
-    <li><a href="#练习16编写一个程序要求能够遍历一个字符数组并将当前字符和前一个字符不相同的字符拷贝至另一个数组">练习16：编写一个程序，要求能够遍历一个字符数组，并将当前字符和前一个字符不相同的字符拷贝至另一个数组。</a></li>
-    <li><a href="#练习17写一个程序使用冒泡排序的方法排序一个包含整数的切片算法的定义可参考-维基百科">练习17:写一个程序，使用冒泡排序的方法排序一个包含整数的切片（算法的定义可参考 维基百科）。</a></li>
+    <li><a href="#go数组和切片练习">Go数组和切片练习</a></li>
+    <li><a href="#数组">数组</a>
+      <ul>
+        <li><a href="#练习1证明当数组赋值时发生了数组内存拷贝">练习1：证明当数组赋值时，发生了数组内存拷贝。</a></li>
+        <li><a href="#练习2写一个循环并用下标给数组赋值从-0-到-15并且将数组打印在屏幕上">练习2:写一个循环并用下标给数组赋值（从 0 到 15）并且将数组打印在屏幕上。</a></li>
+        <li><a href="#练习3通过数组我们可以更快的计算出-fibonacci-数完成该方法并打印出前-50-个-fibonacci-数字">练习3：通过数组我们可以更快的计算出 Fibonacci 数。完成该方法并打印出前 50 个 Fibonacci 数字。</a></li>
+      </ul>
+    </li>
+    <li><a href="#切片">切片</a>
+      <ul>
+        <li><a href="#练习4-给定切片-sl将一个-byte-数组追加到-sl-后面写一个函数-appendslice-data-byte-byte该函数在-sl-不能存储更多数据的时候自动扩容">练习4： 给定切片 <code>sl</code>，将一个 <code>[]byte</code> 数组追加到 <code>sl</code> 后面。写一个函数 <code>Append(slice, data []byte) []byte</code>，该函数在 <code>sl</code> 不能存储更多数据的时候自动扩容。</a></li>
+        <li><a href="#练习5把一个缓存-buf-分片成两个切片第一个是前-n-个-bytes后一个是剩余的用一行代码实现">练习5：把一个缓存 <code>buf</code> 分片成两个切片：第一个是前 <code>n</code> 个 bytes，后一个是剩余的，用一行代码实现。</a></li>
+        <li><a href="#练习5遍历多维切片使用for-range">练习5：遍历多维切片，使用for-range</a></li>
+        <li><a href="#练习6通过使用省略号操作符--来实现累加方法">练习6：通过使用省略号操作符 <code>...</code> 来实现累加方法。</a></li>
+        <li><a href="#练习7给定一个切片-s-int-和一个-int-类型的因子-factor扩展-s-使其长度为-lens--factor">练习7：给定一个切片 <code>s []int</code> 和一个 <code>int</code> 类型的因子 <code>factor</code>，扩展 <code>s</code> 使其长度为 <code>len(s) * factor</code>。</a></li>
+        <li><a href="#练习8用顺序函数过滤容器s-是前-10-个整型的切片构造一个函数-filter第一个参数是-s第二个参数是一个-fn-funcint-bool返回满足函数-fn-的元素切片通过-fn-测试方法测试当整型值是偶数时的情况">练习8:用顺序函数过滤容器：<code>s</code> 是前 10 个整型的切片。构造一个函数 <code>Filter</code>，第一个参数是 <code>s</code>，第二个参数是一个 <code>fn func(int) bool</code>，返回满足函数 <code>fn</code> 的元素切片。通过 <code>fn</code> 测试方法测试当整型值是偶数时的情况</a></li>
+        <li><a href="#练习9写一个函数-insertstringslice-将切片插入到另一个切片的指定位置">练习9:写一个函数 <code>InsertStringSlice()</code> 将切片插入到另一个切片的指定位置。</a></li>
+        <li><a href="#练习10写一个函数-removestringslice-将从-start-到-end-索引的元素从切片中移除">练习10:写一个函数 <code>RemoveStringSlice()</code> 将从 <code>start</code> 到 <code>end</code> 索引的元素从切片中移除。</a></li>
+        <li><a href="#练习11从字符串生成切片">练习11：从字符串生成切片</a></li>
+        <li><a href="#练习12修改字符串中的某个字符">练习12：修改字符串中的某个字符</a></li>
+      </ul>
+    </li>
+    <li><a href="#字符串">字符串</a>
+      <ul>
+        <li><a href="#练习13编写一个函数要求其接受两个参数原始字符串-str-和分割索引-i然后返回两个分割后的字符串">练习13：编写一个函数，要求其接受两个参数，原始字符串 str 和分割索引 i，然后返回两个分割后的字符串。</a></li>
+        <li><a href="#练习14假设有字符串-str那么-strlenstr2--strlenstr2-的结果是什么">练习14：假设有字符串 str，那么 str[len(str)/2:] + str[:len(str)/2] 的结果是什么？</a></li>
+        <li><a href="#练习15编写一个程序要求能够反转字符串即将-google-转换成-elgoog提示使用-byte-类型的切片">练习15:编写一个程序，要求能够反转字符串，即将 &ldquo;Google&rdquo; 转换成 &ldquo;elgooG&rdquo;（提示：使用 []byte 类型的切片）。</a></li>
+        <li><a href="#练习16编写一个程序要求能够遍历一个字符数组并将当前字符和前一个字符不相同的字符拷贝至另一个数组">练习16：编写一个程序，要求能够遍历一个字符数组，并将当前字符和前一个字符不相同的字符拷贝至另一个数组。</a></li>
+        <li><a href="#练习17写一个程序使用冒泡排序的方法排序一个包含整数的切片算法的定义可参考-维基百科">练习17:写一个程序，使用冒泡排序的方法排序一个包含整数的切片（算法的定义可参考 维基百科）。</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
       </div><div class="content" id="content"><h1 id="go数组和切片练习" class="heading-element"><span>Go数组和切片练习</span>

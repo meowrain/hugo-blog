@@ -109,7 +109,7 @@ enableEmoji = true
   # Table Of Contents settings
   [markup.tableOfContents]
     ordered = false
-    startLevel = 2
+    startLevel = 1
     endLevel = 6
 # -------------------------------------------------------------------------------------
 # Sitemap Configuration
