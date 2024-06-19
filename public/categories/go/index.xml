@@ -4,7 +4,15 @@
     <link>https://example.org/categories/go/</link>
     <description>Go - 分类 | MeowRain Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
-      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Sat, 18 May 2024 18:14:40 &#43;0800</lastBuildDate><atom:link href="https://example.org/categories/go/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Wed, 19 Jun 2024 10:43:47 &#43;0000</lastBuildDate><atom:link href="https://example.org/categories/go/" rel="self" type="application/rss+xml" /><item>
+  <title>Go net/http库</title>
+  <link>https://example.org/posts/51b9f8d/</link>
+  <pubDate>Wed, 19 Jun 2024 10:43:47 &#43;0000</pubDate>
+  <author>meowrain</author>
+  <guid>https://example.org/posts/51b9f8d/</guid>
+  <description><![CDATA[Go net/http库 Get()方法 函数原型 1 func Get(url string) (resp *Response, err error) ]]></description>
+</item>
+<item>
   <title>Go网络编程</title>
   <link>https://example.org/posts/fb7e90b/</link>
   <pubDate>Sat, 18 May 2024 18:14:40 &#43;0800</pubDate>
@@ -90,15 +98,6 @@ recover 也是一个内建函数，用于在 defer 延迟执行的函数中捕�
   <guid>https://example.org/posts/b3efa23/</guid>
   <description><![CDATA[Go 接口 接口定义 Go语言提倡面向接口编程。
 指针接收者实现接口 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 package main import &#34;fmt&#34; // 接口定义 type USB interface { Connect() Disconnect() } type Laptop struct { name string version string } type Desktop struct { name string version string } // 实现USB接口 func (laptop *Laptop) Connect() { fmt.]]></description>
-</item>
-<item>
-  <title>Go文件读写</title>
-  <link>https://example.org/posts/17ec745/</link>
-  <pubDate>Wed, 15 May 2024 19:03:48 &#43;0800</pubDate>
-  <author>meowrain</author>
-  <guid>https://example.org/posts/17ec745/</guid>
-  <description><![CDATA[参考文档：https://www.liwenzhou.com/posts/Go/file/
-读取文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 package main import ( &#34;fmt&#34; &#34;io&#34; &#34;os&#34;) func main() { file, err := os.Open(&#34;./data.txt&#34;) if err != nil { fmt.Println(&#34;open file err:&#34;, err) return } defer file.Close() var tmp = make([]byte, 1024) n, err := file.Read(tmp) if err == io.EOF { fmt.Println(&#34;文件读取完毕&#34;) return } fmt.Printf(&#34;读取了%d字节数据\n&#34;, n) fmt.]]></description>
 </item>
 </channel>
 </rss>

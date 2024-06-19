@@ -4,9 +4,17 @@
     <link>https://example.org/</link>
     <description>MeowRain Blog</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>meowrain@126.com (meowrain)</managingEditor>
-      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Wed, 19 Jun 2024 02:32:12 &#43;0000</lastBuildDate>
+      <webMaster>meowrain@126.com (meowrain)</webMaster><lastBuildDate>Wed, 19 Jun 2024 10:43:47 &#43;0000</lastBuildDate>
       <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Go net/http库</title>
+  <link>https://example.org/posts/51b9f8d/</link>
+  <pubDate>Wed, 19 Jun 2024 10:43:47 &#43;0000</pubDate>
+  <author>meowrain</author>
+  <guid>https://example.org/posts/51b9f8d/</guid>
+  <description><![CDATA[Go net/http库 Get()方法 函数原型 1 func Get(url string) (resp *Response, err error) ]]></description>
+</item>
+<item>
   <title>Linux系统编程 标准IO 打开并读写文件</title>
   <link>https://example.org/posts/232b1fc/</link>
   <pubDate>Wed, 19 Jun 2024 02:32:12 &#43;0000</pubDate>
@@ -113,16 +121,6 @@ IP 包格式 IP 地址的基础知识 IP 地址（IPv4 地址）由 32 位正整
 ● 工厂类 角色
 抽象产品角色：
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 package com.powernode.factory; /** * 武器（抽象产品角色） * @author 动力节点 * @version 1.0 * @className Weapon * @since 1.0 **/ public abstract class Weapon { /** * 所有的武器都有攻击行为 */ public abstract void attack(); } 具体产品角色：]]></description>
-</item>
-<item>
-  <title>Java Spring笔记04 Spring引入外部属性配置文件</title>
-  <link>https://example.org/posts/102939e/</link>
-  <pubDate>Thu, 23 May 2024 12:15:03 &#43;0800</pubDate>
-  <author>meowrain</author>
-  <guid>https://example.org/posts/102939e/</guid>
-  <description><![CDATA[Spring引入外部属性配置文件 我们都知道编写数据源的时候是需要连接数据库的信息的，例如：driver url username password等信息。这些信息可以单独写到一个属性配置文件中吗，这样用户修改起来会更加的方便。当然可以。
-第一步：写一个数据源类，提供相关属性。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 MyDataSource.]]></description>
 </item>
 </channel>
 </rss>
