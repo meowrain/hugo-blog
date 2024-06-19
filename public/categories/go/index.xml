@@ -10,7 +10,8 @@
   <pubDate>Wed, 19 Jun 2024 10:43:47 &#43;0000</pubDate>
   <author>meowrain</author>
   <guid>https://example.org/posts/51b9f8d/</guid>
-  <description><![CDATA[Go net/http库 Get()方法 函数原型 1 func Get(url string) (resp *Response, err error) ]]></description>
+  <description><![CDATA[Go net/http库 Get()方法 函数原型 1 func Get(url string) (resp *Response, err error) 使用示例：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 package main import ( &#34;fmt&#34; &#34;io&#34; &#34;log&#34; &#34;net/http&#34; ) func main() { response, err := http.Get(&#34;http://httpbin.org/get&#34;) if err != nil { log.Fatal(err) } fmt.]]></description>
 </item>
 <item>
   <title>Go网络编程</title>
